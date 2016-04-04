@@ -27,3 +27,24 @@ new HackerSpace('Tilikum Place Cafe', 'Tilikum Place Cafe', 'tilikumplacecafe.co
 new HackerSpace('Cherry Street Coffee House', '2719 1st Ave, Seattle, WA 98121', 'cherryst.com').addRatings(0, 4.3, 3.0, 4.0, 4.5, 3.6, 4.2);
 new HackerSpace('Drip City', '2929 1st Ave, Seattle, WA 98121', 'dripcitycoffee.com').addRatings(3.5, 4.8, 4.5, 4.8, 4.4, 3.8, 4.8);
 new HackerSpace('Starbucks Denny Triangle', '521 Wall St, Seatt,e WA 98121', 'starbucks.com').addRatings(0, 4.2, 4, 4.2, 4.5, 3.9, 4.8);
+
+var dropdown1 = document.getElementById('hangounts-dropdown-1');
+var dropdown2 = document.getElementById('hangounts-dropdown-2');
+
+function addToDropDown(){
+  var addedOption ;
+  for (var i = 0; i < hackerSpaceArray.length; i++){
+    addedOption = document.createElement('option');
+    addedOption.setAttribute('value', hackerSpaceArray[i].website.slice(0,-4));
+    addedOption.textContent = hackerSpaceArray[i].name;
+    dropdown1.appendChild(addedOption);
+  }
+  for (var i = 0; i < hackerSpaceArray.length; i++){
+    addedOption = document.createElement('option');
+    addedOption.setAttribute('value', hackerSpaceArray[i].website.slice(0,-4));
+    addedOption.textContent = hackerSpaceArray[i].name;
+    dropdown2.appendChild(addedOption);
+  }
+};
+
+addToDropDown();
