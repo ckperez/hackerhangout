@@ -2,12 +2,13 @@
 <html>
   <head>
     <title>Hacker Hangout</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
   </head>
   <body>
     <header>
       <nav>
         <ul class="social">
-          <li>Facebook image</li>
+          <li>Facebook</li>
           <li>Twitter</li>
           <li>Instagram</li>
         </ul>
@@ -18,12 +19,14 @@
         </ul>
       </nav>
     </header>
-    <section>
+    <section id="landing-page">
       <img src="placeholder">
-      <a href="#review-page">Find Your Hacky Place</a>
+      <a href="#review-page"><button id="cta">Find Your Hacky Place</button></a>
     </section>
     <section>
-      <iframe src="https://www.google.com/maps/d/embed?mid=zVFR5Ok3frW8.k9unUQinZKUA&hl=en" width="640" height="480"></iframe>
+      <div id="map">
+        <iframe src="https://www.google.com/maps/d/embed?mid=zvGs80ZAIlBA.kKv4tXm1uXxA" width="100%" height="480"></iframe>
+      </div>
     </section>
     <section id="review-page">
       <canvas id="canvas" width="400" height="400"></canvas>
