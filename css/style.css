@@ -59,3 +59,11 @@ nav a {
   left: calc(50% - 150px);
   border-style: none;
 }
+
+.kill-scroll {
+  pointer-events: none;
+}
+
+.hacker-map {
+  border-style: none;
+}
