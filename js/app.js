@@ -30,12 +30,11 @@ new HackerSpace('Holy Cannoli', '2720 3rd Ave, Seattle, WA 98121', 'holycannolis
 new HackerSpace('Tilikum Place Cafe', 'Tilikum Place Cafe', 'tilikumplacecafe.com').addRatings(4.6, 4.4, 1.9, 4.3, 3.7, 3.5, 1.0);
 new HackerSpace('Cherry Street Coffee House', '2719 1st Ave, Seattle, WA 98121', 'cherryst.com').addRatings(0, 4.3, 3.0, 4.0, 4.5, 3.6, 4.2);
 new HackerSpace('Drip City', '2929 1st Ave, Seattle, WA 98121', 'dripcitycoffee.com').addRatings(3.5, 4.8, 4.5, 4.8, 4.4, 3.8, 4.8);
-new HackerSpace('Starbucks Denny Triangle', '521 Wall St, Seatt,e WA 98121', 'starbucks.com').addRatings(0, 4.2, 4, 4.2, 4.5, 3.9, 4.8);
+new HackerSpace('Starbucks Denny Triangle', '521 Wall St, Seattle WA 98121', 'starbucks.com').addRatings(0, 4.2, 4, 4.2, 4.5, 3.9, 4.8);
 console.log('hackerSpaceArray ', hackerSpaceArray);
 
 var dropdown1 = document.getElementById('hangouts-dropdown-1');
 var dropdown2 = document.getElementById('hangouts-dropdown-2');
-
 
 function addToDropDown(){
   var addedOption ;
@@ -135,3 +134,11 @@ var submitComparisonForm = document.getElementById('chart-form');
 if (indexID){
   submitComparisonForm.addEventListener('submit', collectComparisonForm);
 }
+function getInputFromLocalStorage(){
+  var updatedHackerSpaceArray = JSON.parse(localStorage.getItem('updatedHackerSpaceArray'));
+  if (updatedHackerSpaceArray){
+    hackerSpaceArray = updatedHackerSpaceArray;
+  }
+}
+
+getInputFromLocalStorage();
