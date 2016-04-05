@@ -3,11 +3,26 @@ var reviewCriteriaArray = ['booze', 'coffee', 'space', 'reviews', 'affordability
 var indexID = document.getElementById('indexID');
 var inputID = document.getElementById('inputID');
 
+var mapID = document.getElementById('iframe-map');
+var mapDivID = document.getElementById('iframe-container');
+
+function killMapScroll(){
+  mapID.classList.add('kill-scroll');
+};
+
+function removeKillScroll(){
+  mapID.classList.remove('kill-scroll');
+};
+
+function returnKillScroll(){
+  killMapScroll();
+};
+
 function HackerSpace(name, address, website){
   this.name = name;
   this.address = address;
   this.website = website;
-}
+};
 
 HackerSpace.prototype.addRatings = function(booze, coffee, space, reviews, affordability, hours, wifi){
   this.booze = booze;
@@ -161,9 +176,13 @@ if (indexID){
   submitComparisonForm.addEventListener('submit', collectComparisonForm);
 }
 
+mapDivID.addEventListener('click', removeKillScroll);
+mapDivID.addEventListener('mouseleave', returnKillScroll);
+
 function getInputFromLocalStorage(){
   var updatedHackerSpaceArray = JSON.parse(localStorage.getItem('updatedHackerSpaceArray'));
   if (updatedHackerSpaceArray){
     hackerSpaceArray = updatedHackerSpaceArray;
   }
 }
+killMapScroll();
