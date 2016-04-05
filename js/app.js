@@ -51,6 +51,9 @@ function addToDropDown(){
     dropdown2.appendChild(addedOption);
   }
 };
+
+getInputFromLocalStorage();
+
 if (indexID) {
   addToDropDown();
 }
@@ -157,11 +160,10 @@ var submitComparisonForm = document.getElementById('chart-form');
 if (indexID){
   submitComparisonForm.addEventListener('submit', collectComparisonForm);
 }
+
 function getInputFromLocalStorage(){
   var updatedHackerSpaceArray = JSON.parse(localStorage.getItem('updatedHackerSpaceArray'));
   if (updatedHackerSpaceArray){
     hackerSpaceArray = updatedHackerSpaceArray;
   }
 }
-
-getInputFromLocalStorage();
