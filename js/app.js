@@ -69,21 +69,27 @@ function collectComparisonForm(event){
   var dropDownName1 = event.target.hangouts.value;
   var dropDownName2 = event.target.hangouts2.value;
 
+  var positivePref = event.target.positivePreference.value;
+  var negativePref = event.target.negativePreference.value;
+
   for (i = 0; i < hackerSpaceArray.length; i++){
     if(dropDownName1 == hackerSpaceArray[i].name){
       dropDownName1 = hackerSpaceArray[i];
-      console.log(dropDownName1, ' is dropdown name 1');
+      dropDownName1[positivePref] *= 2;
+      dropDownName1[negativePref] *= 0.5;
     }
     if(dropDownName2 == hackerSpaceArray[i].name){
       dropDownName2 = hackerSpaceArray[i];
+      dropDownName2[positivePref] *= 2;
+      dropDownName2[negativePref] *= 0.5;
       console.log(dropDownName2, ' is dropdown name 2');
     }
   }
 
-  var hackerZone1 = new RadarChartData(dropDownName1[name], 'rgba(220, 220, 220, 1)', 'rgba(220, 220, 220, 0.2)');
+  var hackerZone1 = new RadarChartData(dropDownName1.name, 'rgba(220, 220, 220, 1)', 'rgba(220, 220, 220, 0.2)');
   hackerZone1.setData(dropDownName1);
   console.log(hackerZone1, ' is hackerZone1');
-  var hackerZone2 = new RadarChartData(dropDownName2[name], 'rgba(151, 187, 205, 1)', 'rgba(151, 187, 205, 0.2)');
+  var hackerZone2 = new RadarChartData(dropDownName2.name, 'rgba(151, 187, 205, 1)', 'rgba(151, 187, 205, 0.2)');
   hackerZone2.setData(dropDownName2);
   console.log(hackerZone2, 'is hackerZone2');
 
@@ -97,6 +103,10 @@ function collectComparisonForm(event){
   };
   var ctx = document.getElementById('canvas').getContext('2d');
   var myRadarChart = new Chart(ctx).Radar(data);
+  dropDownName1[positivePref] /= 2;
+  dropDownName1[negativePref] /= 0.5;
+  dropDownName2[positivePref] /= 2;
+  dropDownName2[negativePref] /= 0.5;
 };
 
 function RadarChartData(labelName, color, colorFill){
