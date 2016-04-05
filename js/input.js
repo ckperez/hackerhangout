@@ -12,6 +12,7 @@ buttonRows.push(cashMoneyRadioButtons = document.getElementsByName('cash-money')
 buttonRows.push(googleReviewsRadioButtons = document.getElementsByName('google-review'));
 
 function handleReview(event){
+  getInputFromLocalStorage();
   event.preventDefault();
   var inputName = event.target.businessName.value;
   //console.log('input name = ' + inputName);
@@ -28,7 +29,22 @@ function handleReview(event){
   console.log(userReviewedLocation);
   userReviewedLocation.addRatings(boozeValue, coffeeValue, tableSpaceValue, googleReviewValue, cashMoneyValue, hoursValue, wifiValue);
   console.log(userReviewedLocation);
+  saveNewInputToLocalStorage();
+
 };
 if (inputID){
   addReviewButton.addEventListener('submit',handleReview);
 }
+
+function saveNewInputToLocalStorage(){
+  localStorage.setItem('updatedHackerSpaceArray', JSON.stringify(hackerSpaceArray));
+}
+
+function getInputFromLocalStorage(){
+  var updatedHackerSpaceArray = JSON.parse(localStorage.getItem('updatedHackerSpaceArray'));
+  if (updatedHackerSpaceArray){
+    hackerSpaceArray = updatedHackerSpaceArray;
+  }
+}
+
+getInputFromLocalStorage();
