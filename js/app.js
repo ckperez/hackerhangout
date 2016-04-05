@@ -3,7 +3,6 @@ var reviewCriteriaArray = ['booze', 'coffee', 'space', 'reviews', 'affordability
 var indexID = document.getElementById('indexID');
 var inputID = document.getElementById('inputID');
 
-
 function HackerSpace(name, address, website){
   this.name = name;
   this.address = address;
@@ -21,16 +20,17 @@ HackerSpace.prototype.addRatings = function(booze, coffee, space, reviews, affor
   hackerSpaceArray.push(this);
 };
 
-new HackerSpace('Code Fellows', '2901 3rd Ave, Seattle, WA 98121', 'codefellows.org').addRatings(3, 2.9, 5, 4.4, 4.5, 3.8, 3.2);
-new HackerSpace('Uptown Expresso', '2504 4th Ave, Seattle, WA 98121', 'uptownespresso.net').addRatings(0, 4.7, 4.8, 4.3, 2.8, 4.0, 4.7);
-new HackerSpace('Street Bean Coffee', '2711 3rd Ave, Seattle, WA 98121', 'streebean.org').addRatings(0, 4.8, 2.5, 4.7, 4.1, 3.3, 4.0);
-new HackerSpace('Buckleys', '232 1st Ave W, Seattle, WA 98119',	'buckelyspubs.com').addRatings(4.4, 1, 2.7, 4.2, 4.4, 3.9, 3.3);
-new HackerSpace('The 5 Point Cafe', '415 Cedar Street, Seattle, WA 98121', 'the5pointcafe.com').addRatings(4.3, 1.2, 2.1, 3.9, 4.8, 5.0, 4.0);
-new HackerSpace('Holy Cannoli', '2720 3rd Ave, Seattle, WA 98121', 'holycannoliseattle.com').addRatings(0, 5.0, 1.0, 4.5, 4.1, 2.8, 3.4);
-new HackerSpace('Tilikum Place Cafe', 'Tilikum Place Cafe', 'tilikumplacecafe.com').addRatings(4.6, 4.4, 1.9, 4.3, 3.7, 3.5, 1.0);
-new HackerSpace('Cherry Street Coffee House', '2719 1st Ave, Seattle, WA 98121', 'cherryst.com').addRatings(0, 4.3, 3.0, 4.0, 4.5, 3.6, 4.2);
-new HackerSpace('Drip City', '2929 1st Ave, Seattle, WA 98121', 'dripcitycoffee.com').addRatings(3.5, 4.8, 4.5, 4.8, 4.4, 3.8, 4.8);
-new HackerSpace('Starbucks Denny Triangle', '521 Wall St, Seattle WA 98121', 'starbucks.com').addRatings(0, 4.2, 4, 4.2, 4.5, 3.9, 4.8);
+new HackerSpace('Code Fellows', '2901 3rd Ave, Seattle, WA 98121', 'http://www.codefellows.org/').addRatings(3, 2.9, 5, 4.4, 4.5, 3.8, 3.2);
+new HackerSpace('Uptown Expresso', '2504 4th Ave, Seattle, WA 98121', 'http://www.velvetfoam.com/').addRatings(0, 4.7, 4.8, 4.3, 2.8, 4.0, 4.7);
+new HackerSpace('Street Bean Coffee', '2711 3rd Ave, Seattle, WA 98121', 'http://streetbeanespresso.org/').addRatings(0, 4.8, 2.5, 4.7, 4.1, 3.3, 4.0);
+new HackerSpace('Buckleys', '232 1st Ave W, Seattle, WA 98119',	'http://www.buckleyspubs.com/home-qa.html').addRatings(4.4, 1, 2.7, 4.2, 4.4, 3.9, 3.3);
+new HackerSpace('The 5 Point Cafe', '415 Cedar Street, Seattle, WA 98121', 'http://the5pointcafe.com/').addRatings(4.3, 1.2, 2.1, 3.9, 4.8, 5.0, 4.0);
+new HackerSpace('Holy Cannoli', '2720 3rd Ave, Seattle, WA 98121', 'http://www.holycannoliseattle.com/').addRatings(0, 5.0, 1.0, 4.5, 4.1, 2.8, 3.4);
+new HackerSpace('Tilikum Place Cafe', 'Tilikum Place Cafe', 'http://www.tilikumplacecafe.com/').addRatings(4.6, 4.4, 1.9, 4.3, 3.7, 3.5, 1.0);
+new HackerSpace('Cherry Street Coffee House', '2719 1st Ave, Seattle, WA 98121', 'http://cherryst.com/').addRatings(0, 4.3, 3.0, 4.0, 4.5, 3.6, 4.2);
+new HackerSpace('Drip City', '2929 1st Ave, Seattle, WA 98121', 'http://dripcitycoffee.com/').addRatings(3.5, 4.8, 4.5, 4.8, 4.4, 3.8, 4.8);
+new HackerSpace('Starbucks Denny Triangle', '521 Wall St, Seatt,e WA 98121', 'http://www.starbucks.com/store/114075/us/city-university/521-wall-st-seattle-wa-98121').addRatings(0, 4.2, 4, 4.2, 4.5, 3.9, 4.8);
+
 console.log('hackerSpaceArray ', hackerSpaceArray);
 
 var dropdown1 = document.getElementById('hangouts-dropdown-1');
@@ -89,6 +89,28 @@ function collectComparisonForm(event){
       console.log(dropDownName2, ' is dropdown name 2');
     }
   }
+  var scoreHackZone1 = 0;
+  var scoreHackZone2 = 0;
+  for (i = 0; i < reviewCriteriaArray.length; i++) {
+    scoreHackZone1 += dropDownName1[reviewCriteriaArray[i]];
+    scoreHackZone2 += dropDownName2[reviewCriteriaArray[i]];
+  }
+
+  if (scoreHackZone1 >= scoreHackZone2) {
+    var winner = dropDownName1;
+  } else {
+    winner = dropDownName2;
+  }
+
+  var elWinnerStatement = document.createElement('p');
+  var winnerStatement = 'The winner is: ' + winner.name + ' with the top score! ';
+  elWinnerStatement.textContent = winnerStatement;
+  elChartDiv.appendChild(elWinnerStatement);
+  var elWinnerLink = document.createElement('a');
+  elWinnerLink.setAttribute('href', winner.website);
+  elWinnerLink.textContent = 'Get More Info!';
+  elChartDiv.appendChild(elWinnerLink);
+  console.log('elWinnerStatement ', elWinnerStatement);
 
   var hackerZone1 = new RadarChartData(dropDownName1.name, 'rgba(220, 220, 220, 1)', 'rgba(220, 220, 220, 0.2)');
   hackerZone1.setData(dropDownName1);
@@ -107,6 +129,7 @@ function collectComparisonForm(event){
   };
   var ctx = document.getElementById('canvas').getContext('2d');
   var myRadarChart = new Chart(ctx).Radar(data);
+
   dropDownName1[positivePref] /= 2;
   dropDownName1[negativePref] /= 0.5;
   dropDownName2[positivePref] /= 2;
