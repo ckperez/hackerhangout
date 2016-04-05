@@ -1,6 +1,7 @@
 var hackerSpaceArray = [];
 var reviewCriteriaArray = ['booze', 'coffee', 'space', 'reviews', 'affordability', 'hours', 'wifi'];
-var ctx = document.getElementById('canvas').getContext('2d');
+if (window.location.)
+// var ctx = document.getElementById('canvas').getContext('2d');
 
 function HackerSpace(name, address, website){
   this.name = name;
