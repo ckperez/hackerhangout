@@ -1,7 +1,7 @@
 var hackerSpaceArray = [];
 var reviewCriteriaArray = ['booze', 'coffee', 'space', 'reviews', 'affordability', 'hours', 'wifi'];
-
-var ctx = document.getElementById('canvas').getContext('2d');
+var indexID = document.getElementById('indexID');
+var inputID = document.getElementById('inputID');
 
 
 function HackerSpace(name, address, website){
@@ -36,6 +36,7 @@ console.log('hackerSpaceArray ', hackerSpaceArray);
 var dropdown1 = document.getElementById('hangouts-dropdown-1');
 var dropdown2 = document.getElementById('hangouts-dropdown-2');
 
+
 function addToDropDown(){
   var addedOption ;
   for (var i = 0; i < hackerSpaceArray.length; i++){
@@ -51,8 +52,9 @@ function addToDropDown(){
     dropdown2.appendChild(addedOption);
   }
 };
-
-addToDropDown();
+if (indexID) {
+  addToDropDown();
+}
 
 function clearBox(elementID) {
   document.getElementById(elementID).textContent = '';
@@ -130,4 +132,6 @@ RadarChartData.prototype.setData = function(inputObject){
 };
 
 var submitComparisonForm = document.getElementById('chart-form');
-submitComparisonForm.addEventListener('submit', collectComparisonForm);
+if (indexID){
+  submitComparisonForm.addEventListener('submit', collectComparisonForm);
+}
