@@ -1,3 +1,5 @@
+var indexID = document.getElementById('indexID');
+var inputID = document.getElementById('inputID');
 var addReviewButton = document.getElementById('add-review');
 var wifiRadioButtons, boozeRadioButtons, coffeeRadioButtons, tableSpaceRadioButtons, hoursRadioButtons, cashMoneyRadioButtons, googleReviewsRadioButtons;
 var buttonRows = [];
@@ -27,5 +29,6 @@ function handleReview(event){
   userReviewedLocation.addRatings(boozeValue, coffeeValue, tableSpaceValue, googleReviewValue, cashMoneyValue, hoursValue, wifiValue);
   console.log(userReviewedLocation);
 };
-
-addReviewButton.addEventListener('submit',handleReview);
+if (inputID){
+  addReviewButton.addEventListener('submit',handleReview);
+}
