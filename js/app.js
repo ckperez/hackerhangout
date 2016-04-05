@@ -85,6 +85,20 @@ function collectComparisonForm(event){
       console.log(dropDownName2, ' is dropdown name 2');
     }
   }
+  var scoreHackZone1 = 0;
+  var scoreHackZone2 = 0;
+  for (i = 0; i < reviewCriteriaArray.length; i++) {
+    scoreHackZone1 += dropDownName1[reviewCriteriaArray[i]];
+    scoreHackZone2 += dropDownName2[reviewCriteriaArray[i]];
+  }
+
+  if (scoreHackZone1 >= scoreHackZone2) {
+    var winner = dropDownName1;
+  } else {
+    winner = dropDownName2;
+  }
+
+  console.log('winner, ', winner);
 
   var hackerZone1 = new RadarChartData(dropDownName1.name, 'rgba(220, 220, 220, 1)', 'rgba(220, 220, 220, 0.2)');
   hackerZone1.setData(dropDownName1);
@@ -103,6 +117,8 @@ function collectComparisonForm(event){
   };
   var ctx = document.getElementById('canvas').getContext('2d');
   var myRadarChart = new Chart(ctx).Radar(data);
+
+
   dropDownName1[positivePref] /= 2;
   dropDownName1[negativePref] /= 0.5;
   dropDownName2[positivePref] /= 2;
