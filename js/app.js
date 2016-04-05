@@ -1,6 +1,5 @@
 var hackerSpaceArray = [];
 var reviewCriteriaArray = ['booze', 'coffee', 'space', 'reviews', 'affordability', 'hours', 'wifi'];
-var ctx = document.getElementById('canvas').getContext('2d');
 
 function HackerSpace(name, address, website){
   this.name = name;
@@ -52,8 +51,21 @@ function addToDropDown(){
 
 addToDropDown();
 
+function clearBox(elementID) {
+  document.getElementById(elementID).textContent = '';
+}
+
 function collectComparisonForm(event){
   event.preventDefault();
+
+  clearBox('chart-div');
+  var elChartDiv = document.getElementById('chart-div');
+  var elCanvas = document.createElement('canvas');
+  elCanvas.setAttribute('height', '400');
+  elCanvas.setAttribute('width', '400');
+  elCanvas.setAttribute('id', 'canvas');
+  elChartDiv.appendChild(elCanvas);
+
   var dropDownName1 = event.target.hangouts.value;
   var dropDownName2 = event.target.hangouts2.value;
 
@@ -83,7 +95,7 @@ function collectComparisonForm(event){
     labels: reviewCriteriaArray,
     datasets: [hackerZone1, hackerZone2]
   };
-
+  var ctx = document.getElementById('canvas').getContext('2d');
   var myRadarChart = new Chart(ctx).Radar(data);
 };
 
