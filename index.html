@@ -30,7 +30,9 @@
       </div>
     </section>
     <section id="review-page">
-      <canvas id="canvas" width="400" height="400"></canvas>
+      <div id='chart-div'>
+        <canvas id="canvas" width="400" height="400"></canvas>
+      </div>
         <form id="chart-form">
           <fieldset>
           <label name="hangouts">Hackzone 1</label>
@@ -47,37 +49,37 @@
             <option value="name1">Name1</option> -->
           </select>
           <br />
-          <label name="positive-preference">Today I can't really hack without: </label>
-            <input type="radio" name="positive-preference" value="wi-fi">
+          <label name="positivePreference">Today I can't really hack without: </label>
+            <input type="radio" name="positivePreference" value="wifi">
               Wi-fi
-            <input type="radio" name="positive-preference" value="booze">
+            <input type="radio" name="positivePreference" value="booze">
               Booze
-            <input type="radio" name="positive-preference" value="coffee">
+            <input type="radio" name="positivePreference" value="coffee">
               Coffee
-            <input type="radio" name="positive-preference" value="table-space">
+            <input type="radio" name="positivePreference" value="space">
               Table Space
-            <input type="radio" name="positive-preference" value="google-reviews">
+            <input type="radio" name="positivePreference" value="reviews">
               Google Reviews
-            <input type="radio" name="positive-preference" value="affordability">
+            <input type="radio" name="positivePreference" value="affordability">
               Affordability
-            <input type="radio" name="positive-preference" value="hours">
+            <input type="radio" name="positivePreference" value="hours">
               Hours
 
           <br />
-          <label name="negative-preference">Today I don't really care about: </label>
-            <input type="radio" name="negative-preference" value="wi-fi">
+          <label name="negativePreference">Today I don't really care about: </label>
+            <input type="radio" name="negativePreference" value="wifi">
               Wi-fi
-            <input type="radio" name="negative-preference" value="booze">
+            <input type="radio" name="negativePreference" value="booze">
               Booze
-            <input type="radio" name="negative-preference" value="coffee">
+            <input type="radio" name="negativePreference" value="coffee">
               Coffee
-            <input type="radio" name="negative-preference" value="table-space">
+            <input type="radio" name="negativePreference" value="space">
               Table Space
-            <input type="radio" name="negative-preference" value="google-reviews">
+            <input type="radio" name="negativePreference" value="reviews">
               Google Reviews
             <input type="radio" name="nagative-preference" value="affordability">
               Affordability
-            <input type="radio" name="negative-preference" value="hours">
+            <input type="radio" name="negativePreference" value="hours">
               Hours
             <br />
             <input type="submit" value="submit" />
