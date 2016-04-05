@@ -3,7 +3,6 @@ var reviewCriteriaArray = ['booze', 'coffee', 'space', 'reviews', 'affordability
 var indexID = document.getElementById('indexID');
 var inputID = document.getElementById('inputID');
 
-
 function HackerSpace(name, address, website){
   this.name = name;
   this.address = address;
