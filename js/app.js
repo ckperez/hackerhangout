@@ -79,7 +79,11 @@ function clearBox(elementID) {
 
 function collectComparisonForm(event){
   event.preventDefault();
-
+  var localArray = [];
+  for (var i = 0; i < hackerSpaceArray.length; i++) {
+    localArray.push(JSON.parse(JSON.stringify(hackerSpaceArray[i])));
+  }
+  console.log('local Array is ', localArray);
   clearBox('chart-div');
   var elChartDiv = document.getElementById('chart-div');
   var elCanvas = document.createElement('canvas');
@@ -94,19 +98,32 @@ function collectComparisonForm(event){
   var positivePref = event.target.positivePreference.value;
   var negativePref = event.target.negativePreference.value;
 
-  for (i = 0; i < hackerSpaceArray.length; i++){
-    if(dropDownName1 == hackerSpaceArray[i].name){
-      dropDownName1 = hackerSpaceArray[i];
-      dropDownName1[positivePref] *= 2;
-      dropDownName1[negativePref] *= 0.5;
+  for (i = 0; i < localArray.length; i++){
+    if(dropDownName1 == localArray[i].name){
+      dropDownName1 = localArray[i];
+      if(dropDownName1[positivePref] > 2.5){
+        dropDownName1[positivePref] *= 1.2;
+      } else {
+        dropDownName1[positivePref] *= 0.75;
+      }
+      if(dropDownName1[negativePref] > 2.5) {
+        dropDownName1[negativePref] *= 0.75;
+      }
     }
-    if(dropDownName2 == hackerSpaceArray[i].name){
-      dropDownName2 = hackerSpaceArray[i];
-      dropDownName2[positivePref] *= 2;
-      dropDownName2[negativePref] *= 0.5;
+    if(dropDownName2 == localArray[i].name){
+      dropDownName2 = localArray[i];
+      if(dropDownName2[positivePref] > 2.5){
+        dropDownName2[positivePref] *= 1.2;
+      } else {
+        dropDownName2[positivePref] *= 0.75;
+      }
+      if(dropDownName2[negativePref] > 2.5) {
+        dropDownName2[negativePref] *= 0.75;
+      }
       console.log(dropDownName2, ' is dropdown name 2');
     }
   }
+
   var scoreHackZone1 = 0;
   var scoreHackZone2 = 0;
   for (i = 0; i < reviewCriteriaArray.length; i++) {
@@ -137,21 +154,20 @@ function collectComparisonForm(event){
   hackerZone2.setData(dropDownName2);
   console.log(hackerZone2, 'is hackerZone2');
 
-  // var options = {
-  //   legendTemplate: '<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>'
-  // };
+  var options = {
+    legendTemplate: '<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>'
+  };
 
   var data = {
     labels: reviewCriteriaArray,
     datasets: [hackerZone1, hackerZone2]
   };
   var ctx = document.getElementById('canvas').getContext('2d');
-  var myRadarChart = new Chart(ctx).Radar(data);
+  var myRadarChart = new Chart(ctx).Radar(data, options);
 
-  dropDownName1[positivePref] /= 2;
-  dropDownName1[negativePref] /= 0.5;
-  dropDownName2[positivePref] /= 2;
-  dropDownName2[negativePref] /= 0.5;
+  console.log(hackerSpaceArray, ' arrayed data');
+  console.log(localArray, ' local array');
+
 };
 
 function RadarChartData(labelName, color, colorFill){
