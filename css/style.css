@@ -228,6 +228,7 @@ ol li{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-family: 'Roboto', sans-serif;
 }
 
 #chart-form{
@@ -409,10 +410,11 @@ nav a:hover {
 }
 
 .team-pics {
-  width: 125px;
+  width: 150px;
   height: 150px;
   border-radius: 50%;
   margin-left: 22%;
+  transition: all .5s;
 }
 
 .team-name {
@@ -429,4 +431,54 @@ nav a:hover {
 
 .footer {
   padding-top: 100px;
+}
+
+.github-image {
+  width: 24px;
+  height: 24px;
+  margin-left: 42%;
+}
+
+.claire-again {
+  background-image: url('../img/IMG_2334.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.claire-again:hover {
+  transform: rotateY();
+  background-image: url('../img/clairegiphy.gif');
+}
+
+.chris-again {
+  background-image: url('../img/IMG_7963.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.chris-again:hover {
+  transform: rotateY();
+  background-image: url('../img/chrisgiph.gif');
+}
+
+.rashid-again {
+  background-image: url('../img/IMG_7963.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.rashid-again:hover {
+  transform: rotateY();
+  background-image: url(../img/chrisgiph.gif);
+}
+
+.drew-again {
+  background-image: url('../img/LinkedIn picture.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.drew-again:hover {
+  transform: rotateY();
+  background-image: url('../img/drewscarface.gif');
 }
