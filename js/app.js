@@ -6,15 +6,19 @@ var inputID = document.getElementById('inputID');
 var mapID = document.getElementById('iframe-map');
 var mapDivID = document.getElementById('iframe-container');
 
+var googleHider = document.getElementsByClassName('google-hider')[0];
+
 function killMapScroll(){
   mapID.classList.add('kill-scroll');
 };
 
 function removeKillScroll(){
   mapID.classList.remove('kill-scroll');
+  googleHider.classList.add('google-hider-be-gone');
 };
 
 function returnKillScroll(){
+  googleHider.classList.remove('google-hider-be-gone');
   killMapScroll();
 };
 

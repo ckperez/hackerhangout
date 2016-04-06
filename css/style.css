@@ -53,12 +53,33 @@ nav a {
   padding: 16px 0;
   color: white;
   background-color: #FF7A7A;
-  border-radius: 4px;
+  border-radius: 10px;
   font-size: 24px;
   box-shadow: 0 2px 2px #555;
   bottom: 38%;
   left: calc(50% - 150px);
   border-style: none;
+  transition: all .5s;
+}
+
+#cta:hover{
+  box-shadow: 0 1px 1px #333;
+  transform: scale(1.1);
+}
+
+.google-hider{
+  width:100%;
+  height: 49px;
+  background-color: #FF7A7A;
+  position: absolute;
+  top: 100vh;
+  z-index: 5;
+  transition: all .5s;
+}
+
+.google-hider-be-gone{
+  transition: all .5s;
+  transform: translateY(-49px);
 }
 
 .kill-scroll {
@@ -69,6 +90,123 @@ nav a {
   border-style: none;
 }
 
+.chart-div{
+  position: relative;
+}
+
+.chart-placeholder{
+  position: absolute;
+  z-index: 5;
+  height: 400px;
+  width: 490px;
+  margin-bottom: -400px;
+  padding-top: 70px;
+  padding-left: 20px;
+}
+
+ol li{
+  padding: 16px 0px;
+}
+
+#review-page{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#chart-form{
+  width: calc(100% - 500px);
+  height: 400px;
+  text-align: center;
+  padding-top: 40px;
+  margin-right: -120px;
+}
+
+#chart-form fieldset{
+  padding-top: 16px;
+  border-style: none;
+}
+
+#chart-form select:first-of-type{
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+select{
+  color: #5C5C5C;
+  border: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+.hack-pref-label{
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+
+.main-app-radios{
+  margin-top:-20px;
+}
+
+.hack-pref-label:nth-last-of-type(2){
+  margin-top: 40px;
+}
+
+.main-app-radios label{
+  text-align: center;
+  margin-right: 12px;
+}
+/**/
+
+#chart-form input[type='radio'] {
+    -webkit-appearance:none;
+    width:16px;
+    height:16px;
+    border:1px solid darkgray;
+    border-radius:50%;
+    outline:none;
+    box-shadow:0 0 2px 0px gray inset;
+}
+#chart-form input[type='radio']:hover {
+    box-shadow:0 0 5px 0px orange inset;
+}
+#chart-form input[type='radio']:before {
+    content:'';
+    display:block;
+    width:100%;
+    height:100%;
+    margin: auto;
+    border-radius:50%;
+}
+#chart-form input[type='radio']:checked:before {
+    background:#FFF;
+    box-shadow:-1px -1px 7px 3px #FF7A7A inset;
+}
+/**/
+#chart-form input{
+  margin: 30px 1px -2px 4px;
+}
+
+.main-app-radios input{
+  margin: 0;
+}
+
+#chart-form button{
+  background-color: #FF7A7A;
+  color: white;
+  border-style: none;
+  border-radius: 6px;
+  height: 30px;
+  width: 80px;
+  box-shadow: 0 2px 2px #555;
+  transition: all .5s;
+  margin-top: 60px;
+}
+
+#chart-form button:hover{
+  box-shadow: 0 1px 1px #333;
+  transform: scale(1.1);
+}
 #image {
   display: flex;
   align-items: center;
