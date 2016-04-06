@@ -230,6 +230,7 @@ ol li{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-family: 'Roboto', sans-serif;
 }
 
 #chart-form{
@@ -333,14 +334,14 @@ select{
 
 #image-logo{
   position: absolute;
-  top:-23px;
+  top: 75px;
   width: 40px;
   height: 40px;
 }
 
 footer{
   position: relative;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 #black-background {
@@ -383,4 +384,103 @@ footer{
 
 nav a:hover {
   color: #FF7A7A;
+}
+
+#team-bios {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 100px;
+  padding-left: 100px;
+  flex-wrap: wrap;
+}
+
+.Chris {
+  width: 250px;
+}
+
+.Claire {
+  width: 250px;
+}
+
+.Rashid {
+  width: 250px;
+}
+
+.Drew {
+  width: 250px;
+}
+
+.team-pics {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-left: 22%;
+  transition: all .5s;
+}
+
+.team-name {
+  text-align: center;
+}
+
+.about-us-header {
+  padding-bottom: 70px;
+}
+
+.bio-content {
+  font-family: 'Roboto', sans-serif;
+}
+
+.footer {
+  padding-top: 100px;
+}
+
+.github-image {
+  width: 24px;
+  height: 24px;
+  margin-left: 42%;
+}
+
+.claire-again {
+  background-image: url('../img/IMG_2334.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.claire-again:hover {
+  transform: rotateY();
+  background-image: url('../img/clairegiphy.gif');
+}
+
+.chris-again {
+  background-image: url('../img/IMG_7963.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.chris-again:hover {
+  transform: rotateY();
+  background-image: url('../img/chrisgiph.gif');
+}
+
+.rashid-again {
+  background-image: url('../img/IMG_7963.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.rashid-again:hover {
+  transform: rotateY();
+  background-image: url(../img/chrisgiph.gif);
+}
+
+.drew-again {
+  background-image: url('../img/LinkedIn picture.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.drew-again:hover {
+  transform: rotateY();
+  background-image: url('../img/drewscarface.gif');
 }
