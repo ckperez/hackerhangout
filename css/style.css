@@ -52,12 +52,33 @@ nav a {
   padding: 16px 0;
   color: white;
   background-color: #FF7A7A;
-  border-radius: 4px;
+  border-radius: 10px;
   font-size: 24px;
   box-shadow: 0 2px 2px #555;
   bottom: 38%;
   left: calc(50% - 150px);
   border-style: none;
+  transition: all .5s;
+}
+
+#cta:hover{
+  box-shadow: 0 1px 1px #333;
+  transform: scale(1.1);
+}
+
+.google-hider{
+  width:100%;
+  height: 49px;
+  background-color: #FF7A7A;
+  position: absolute;
+  top: 100vh;
+  z-index: 5;
+  transition: all .5s;
+}
+
+.google-hider-be-gone{
+  transition: all .5s;
+  transform: translateY(-49px);
 }
 
 .kill-scroll {
@@ -66,4 +87,62 @@ nav a {
 
 .hacker-map {
   border-style: none;
+}
+
+.chart-div{
+  position: relative;
+}
+
+.chart-placeholder{
+  position: absolute;
+  z-index: 5;
+  height: 400px;
+  width: 400px;
+  margin-bottom: -400px;
+}
+
+#review-page{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#chart-form{
+  width: calc(100% - 480px);
+  height: 400px;
+  text-align: center;
+}
+
+#chart-form fieldset{
+  padding-top: 20px;
+  border-style: none;
+}
+
+#chart-form select:first-of-type{
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+/*#chart-form label{
+  padding-bottom: 30px;
+}*/
+
+#chart-form input{
+  margin: 30px 4px;;
+}
+
+#chart-form button{
+  background-color: #FF7A7A;
+  color: white;
+  border-style: none;
+  border-radius: 6px;
+  height: 30px;
+  width: 80px;
+  box-shadow: 0 2px 2px #555;
+  transition: all .5s;
+}
+
+#chart-form button:hover{
+  box-shadow: 0 1px 1px #333;
+  transform: scale(1.1);
 }
