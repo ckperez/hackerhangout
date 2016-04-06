@@ -24,69 +24,93 @@
       <a href="#review-page"><button id="cta">Find Your Hacky Place</button></a>
     </section>
     <section>
+      <div class="google-hider"></div>
       <div id="iframe-container" class="map">
         <iframe id="iframe-map" class="hacker-map" src="https://www.google.com/maps/d/embed?mid=zvGs80ZAIlBA.kKv4tXm1uXxA" width="100%" height="480"></iframe>
       </div>
     </section>
     <section id="review-page">
       <div id='chart-div'>
-        <canvas id="canvas" width="400" height="400"></canvas>
+        <div class="chart-placeholder">
+          <ol>
+            <li>Pick your top 2 Hacker Hangouts from the menus on the right.</li>
+            <li>Select the attribute that your hacking spot must have.</li>
+            <li>Choose an attribute you could not care less about right now.</li>
+            <li>Click submit and check out your results right here!</li>
+          </ol>
+        </div>
+        <canvas id="canvas" width="400" height="400">
+        </canvas>
       </div>
         <form id="chart-form">
           <fieldset>
-          <label name="hangouts">Hackzone 1</label>
+          <label name="hangouts">Hacker Hangout 1</label>
           <select id="hangouts-dropdown-1" name="hangouts">
+            <option value="" selected disabled hidden>Choose a Hacker Hangout</option>
             <!-- <option value="name1">Name1</option>
             <option value="name1">Name1</option>
             <option value="name1">Name1</option> -->
           </select>
-          <br />
-          <label name="hangouts2">Hackzone 2</label>
+          <label name="hangouts2">Hacker Hangout 2</label>
           <select id="hangouts-dropdown-2" name="hangouts2">
+            <option value="" selected disabled hidden>Choose a Hacker Hangout</option>
             <!-- <option value="name1">Name1</option>
             <option value="name1">Name1</option>
             <option value="name1">Name1</option> -->
           </select>
           <br />
-          <label name="positivePreference">Today I can't really hack without: </label>
-            <input type="radio" name="positivePreference" value="wifi">
-              Wi-fi
-            <input type="radio" name="positivePreference" value="booze">
-              Booze
-            <input type="radio" name="positivePreference" value="coffee">
-              Coffee
-            <input type="radio" name="positivePreference" value="space">
-              Table Space
-            <input type="radio" name="positivePreference" value="reviews">
-              Google Reviews
-            <input type="radio" name="positivePreference" value="affordability">
-              Affordability
-            <input type="radio" name="positivePreference" value="hours">
-              Hours
-
+          <div class="hack-pref-label"><label name="positivePreference">Today I can't really hack without: </label></div>
           <br />
-          <label name="negativePreference">Today I don't really care about: </label>
+          <div class="main-app-radios">
+            <input type="radio" name="positivePreference" value="wifi">
+              <label name="positivePreference" value="wifi">Wi-fi</label>
+            <input type="radio" name="positivePreference" value="booze">
+              <label name="positivePreference" value="booze">Booze</label>
+            <input type="radio" name="positivePreference" value="coffee">
+              <label name="positivePreference" value="coffee">Coffee</label>
+            <input type="radio" name="positivePreference" value="space">
+              <label name="positivePreference" value="space">Table Space</label>
+            <input type="radio" name="positivePreference" value="reviews">
+              <label name="positivePreference" value="reviews">Google Reviews</label>
+            <input type="radio" name="positivePreference" value="affordability">
+              <label name="positivePreference" value="affordability">Affordability</label>
+            <input type="radio" name="positivePreference" value="hours">
+              <label name="positivePreference" value="hours">Hours</label>
+          </div>
+          <br />
+          <div class="hack-pref-label"><label name="negativePreference">Today I don't really care about: </label></div>
+          <br />
+          <div class="main-app-radios">
             <input type="radio" name="negativePreference" value="wifi">
-              Wi-fi
+              <label name="positivePreference" value="wifi">Wi-fi</label>
             <input type="radio" name="negativePreference" value="booze">
-              Booze
+              <label name="positivePreference" value="booze">Booze</label>
             <input type="radio" name="negativePreference" value="coffee">
-              Coffee
+              <label name="positivePreference" value="coffee">Coffee</label>
             <input type="radio" name="negativePreference" value="space">
-              Table Space
+              <label name="positivePreference" value="space">Table Space</label>
             <input type="radio" name="negativePreference" value="reviews">
-              Google Reviews
+              <label name="positivePreference" value="reviews">Google Reviews</label>
             <input type="radio" name="nagative-preference" value="affordability">
-              Affordability
+              <label name="positivePreference" value="affordability">Affordability</label>
             <input type="radio" name="negativePreference" value="hours">
-              Hours
+              <label name="positivePreference" value="hours">Hours</label>
+          </div>
             <br />
-            <input type="submit" value="submit" />
+            <button type="submit" value="submit">Submit</button>
             </fieldset>
         </form>
         <p id="winner"></p>
 
-    </section>
+     </section>
+     <footer>
+       <div id="image">
+         <img src="img/HackerHangoutLogo.png" id="image-logo">
+       </div>
+       <div id="black-background">
+       Hacker Hangout &copy; 2016 - All Rights Reserved<br>
+      </div>
+     </footer>
     <script src="js/app.js"></script>
     <script src="js/input.js"></script>
   </body>

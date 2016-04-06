@@ -3,6 +3,25 @@ var reviewCriteriaArray = ['booze', 'coffee', 'space', 'reviews', 'affordability
 var indexID = document.getElementById('indexID');
 var inputID = document.getElementById('inputID');
 
+var mapID = document.getElementById('iframe-map');
+var mapDivID = document.getElementById('iframe-container');
+
+var googleHider = document.getElementsByClassName('google-hider')[0];
+
+function killMapScroll(){
+  mapID.classList.add('kill-scroll');
+};
+
+function removeKillScroll(){
+  mapID.classList.remove('kill-scroll');
+  googleHider.classList.add('google-hider-be-gone');
+};
+
+function returnKillScroll(){
+  googleHider.classList.remove('google-hider-be-gone');
+  killMapScroll();
+};
+
 function HackerSpace(name, address, website){
   this.name = name;
   this.address = address;
