@@ -7,6 +7,7 @@ var mapID = document.getElementById('iframe-map');
 var mapDivID = document.getElementById('iframe-container');
 
 var googleHider = document.getElementsByClassName('google-hider')[0];
+var mapTip = document.getElementsByClassName('click-to-interact')[0];
 
 function killMapScroll(){
   mapID.classList.add('kill-scroll');
@@ -15,12 +16,20 @@ function killMapScroll(){
 function removeKillScroll(){
   mapID.classList.remove('kill-scroll');
   googleHider.classList.add('google-hider-be-gone');
+  mapTip.classList.add('map-tip-be-gone');
 };
 
 function returnKillScroll(){
   googleHider.classList.remove('google-hider-be-gone');
+  mapTip.classList.remove('map-tip-be-gone');
   killMapScroll();
 };
+
+function hideMapTip(){
+  mapTip.classList.add('map-tip-be-gone');
+  mapID.classList.remove('kill-scroll');
+  googleHider.classList.add('google-hider-be-gone');
+}
 
 function HackerSpace(name, address, website){
   this.name = name;
@@ -161,7 +170,15 @@ function collectComparisonForm(event){
     datasets: [hackerZone1, hackerZone2]
   };
   var ctx = document.getElementById('canvas').getContext('2d');
+<<<<<<< HEAD
   var myRadarChart = new Chart(ctx).Radar(data);
+=======
+
+  var myRadarChart = new Chart(ctx).Radar(data, options);
+
+  console.log(hackerSpaceArray, ' arrayed data');
+  console.log(localArray, ' local array');
+>>>>>>> 4d1b53294d01229e17278cd793d42c884f1f73cf
 
   dropDownName1[positivePref] /= 2;
   dropDownName1[negativePref] /= 0.5;
@@ -191,6 +208,13 @@ if (indexID){
   submitComparisonForm.addEventListener('submit', collectComparisonForm);
 }
 
+<<<<<<< HEAD
+=======
+mapDivID.addEventListener('click', removeKillScroll);
+mapDivID.addEventListener('mouseleave', returnKillScroll);
+mapTip.addEventListener('click', hideMapTip);
+
+>>>>>>> 4d1b53294d01229e17278cd793d42c884f1f73cf
 function getInputFromLocalStorage(){
   var updatedHackerSpaceArray = JSON.parse(localStorage.getItem('updatedHackerSpaceArray'));
   if (updatedHackerSpaceArray){

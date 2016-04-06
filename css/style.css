@@ -6,12 +6,17 @@ body {
   margin: 0;
 }
 
+header{
+  position: relative;
+  z-index: 100;
+}
+
 nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #212121;
-  padding: 4px 10px;
+  padding: 15px 10px;
   color: white;
   position: fixed;
   width: 100%;
@@ -21,12 +26,13 @@ nav {
 nav ul {
   list-style: none;
   margin: 0;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 nav li {
   display: inline-block;
-  padding-left: 2px;
-  padding-right: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
 
 }
 
@@ -74,6 +80,27 @@ nav a {
   top: 100vh;
   z-index: 5;
   transition: all .5s;
+}
+
+.click-to-interact{
+  color: #888;
+  opacity: .6;
+  width: 100%;
+  text-align: center;
+  top: 150px;
+  z-index: 6;
+  position: absolute;
+  font-size: 80px;
+  transition: all 5s;
+}
+
+.click-to-interact:hover{
+  cursor: default;
+}
+
+.map-tip-be-gone{
+  display: none;
+  transition: all 5s;
 }
 
 .google-hider-be-gone{
@@ -230,4 +257,45 @@ footer{
   background-color: #212121;
   color: white;
   padding: 20px 10px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#facebook-image {
+  width: 24px;
+  height: 24px;
+}
+
+#twitter-image {
+  width: 24px;
+  height: 24px;
+}
+
+#instagram-image {
+  width: 24px;
+  height: 24px;
+}
+
+#hangout {
+  margin-right: 25px;
+  border-radius: 4px;
+}
+
+#about-us {
+  border-radius: 4px;
+}
+
+#home {
+  border-radius: 4px;
+}
+
+#hangout:hover {
+  background-color: #FF7A7A;
+}
+
+#about-us:hover {
+  background-color: #FF7A7A;
+}
+
+#home:hover {
+  background-color: #FF7A7A;
 }
