@@ -21,6 +21,7 @@ nav {
 nav ul {
   list-style: none;
   margin: 0;
+  padding: 0;
 }
 
 nav li {
@@ -33,6 +34,11 @@ nav li {
 nav a {
   color: white;
   text-decoration: none;
+}
+
+#inputID h1 {
+  padding-top: 50px;
+  margin-top: 0px;
 }
 
 #landing-page{
@@ -67,3 +73,48 @@ nav a {
 .hacker-map {
   border-style: none;
 }
+
+#new-review-form {
+  margin: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+#new-review-form .text-label {
+  float: left;
+  width: 200px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+#add-review fieldset {
+  width:90%;
+}
+
+.rating {
+      overflow: hidden;
+      display: inline-block;
+  }
+
+.rating-input {
+      float: right;
+      width: 16px;
+      height: 16px;
+      padding: 0;
+      margin: 0 0 0 -16px;
+      opacity: 0;
+  }
+  .rating-star, .rating:hover .rating-star {
+      position: relative;
+      float: right;
+      margin-left: 10px;
+      display: block;
+      width: 16px;
+      height: 16px;
+      background: no-repeat center/130% url('../img/star.png');
+  }
+.rating:hover .rating-star:hover, .rating:hover .rating-star:hover ~ .rating-star, .rating-input:checked ~ .rating-star {
+      background-position: 0 0;
+      background: no-repeat center/130% url('../img/color-star.png');
+  }
+  }

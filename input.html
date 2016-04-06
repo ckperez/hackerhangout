@@ -2,6 +2,7 @@
 <html>
  <head>
   <title>Add an new review</title>
+  <link rel="stylesheet" href="css/style.css" type="text/css">
  </head>
  <body id="inputID">
    <header>
@@ -22,66 +23,116 @@
    <section id='new-review-form'>
      <form id='add-review'>
        <fieldset>
-         <label name='businessName'>Name of Business</label>
+         <label class='text-label' name='businessName'>Name of Business</label>
          <input type='text' name='businessName'>
          <br />
-         <label name='address'>Address</label>
+         <label class='text-label' name='address'>Address</label>
          <input type='text' name='address'>
          <br />
-         <label name='website'>Website</label>
+         <label class='text-label' name='website'>Website</label>
          <input type='text' name='website'>
          <br />
          <p>minimal</p>
          <p>Most Excellent</p>
          <br />
-         <label name='wifi'>Wi-fi</label>
-         <input type='radio' name='wifi' value='1'>
-         <input type='radio' name='wifi' value='2'>
-         <input type='radio' name='wifi' value='3'>
-         <input type='radio' name='wifi' value='4'>
-         <input type='radio' name='wifi' value='5'>
+
+         <label class='text-label' name='wifi'>Wi-fi</label>
+         <span class = 'rating'>
+         <input type='radio' name='wifi' class='rating-input' id='radio-5' value='5'>
+         <label for= 'radio-5'class='rating-star'></label>
+         <input type='radio' name='wifi' class='rating-input' id='radio-4' value='4'>
+         <label for= 'radio-4'class='rating-star'></label>
+         <input type='radio' name='wifi' class='rating-input' id='radio-3' value='3'>
+         <label for= 'radio-3'class='rating-star'></label>
+         <input type='radio' name='wifi' class='rating-input' id='radio-2' value='2'>
+         <label for= 'radio-2'class='rating-star'></label>
+         <input type='radio' name='wifi' class='rating-input' id='radio-1' value='1'>
+         <label for= 'radio-1'class='rating-star'></label>
+         </span>
          <br />
-         <label name='booze'>Booze</label>
-         <input type='radio' name='booze' value='1'>
-         <input type='radio' name='booze' value='2'>
-         <input type='radio' name='booze' value='3'>
-         <input type='radio' name='booze' value='4'>
-         <input type='radio' name='booze' value='5'>
+         <label class='text-label' name='booze'>Booze</label>
+         <span class = 'rating'>
+         <input type='radio' name='booze' class='rating-input' id='radio-5' value='5'>
+         <label for= 'radio-5'class='rating-star'></label>
+         <input type='radio' name='booze' class='rating-input' id='radio-4' value='4'>
+         <label for= 'radio-4'class='rating-star'></label>
+         <input type='radio' name='booze' class='rating-input' id='radio-3' value='3'>
+         <label for= 'radio-3'class='rating-star'></label>
+         <input type='radio' name='booze' class='rating-input' id='radio-2' value='2'>
+         <label for= 'radio-2'class='rating-star'></label>
+         <input type='radio' name='booze' class='rating-input' id='radio-1' value='1'>
+         <label for= 'radio-1'class='rating-star'></label>
+         </span>
          <br />
-         <label name='coffee'>Coffee</label>
-         <input type='radio' name='coffee' value='1'>
-         <input type='radio' name='coffee' value='2'>
-         <input type='radio' name='coffee' value='3'>
-         <input type='radio' name='coffee' value='4'>
-         <input type='radio' name='coffee' value='5'>
+         <label class='text-label' name='coffee'>Coffee</label>
+         <span class = 'rating'>
+         <input type='radio' name='coffee' class='rating-input' id='radio-5' value='5'>
+         <label for= 'radio-5'class='rating-star'></label>
+         <input type='radio' name='coffee' class='rating-input' id='radio-4' value='4'>
+         <label for= 'radio-4'class='rating-star'></label>
+         <input type='radio' name='coffee' class='rating-input' id='radio-3' value='3'>
+         <label for= 'radio-3'class='rating-star'></label>
+         <input type='radio' name='coffee' class='rating-input' id='radio-2' value='2'>
+         <label for= 'radio-2'class='rating-star'></label>
+         <input type='radio' name='coffee' class='rating-input' id='radio-1' value='1'>
+         <label for= 'radio-1'class='rating-star'></label>
+         </span>
          <br />
-         <label name='tableSpace'>Table Space</label>
-         <input type='radio' name='tableSpace' value='1'>
-         <input type='radio' name='tableSpace' value='2'>
-         <input type='radio' name='tableSpace' value='3'>
-         <input type='radio' name='tableSpace' value='4'>
-         <input type='radio' name='tableSpace' value='5'>
+         <label class='text-label' name='tableSpace'>Table Space</label>
+         <span class = 'rating'>
+         <input type='radio' name='tableSpace' class='rating-input' id='radio-5' value='5'>
+         <label for= 'radio-5'class='rating-star'></label>
+         <input type='radio' name='tableSpace' class='rating-input' id='radio-4' value='4'>
+         <label for= 'radio-4'class='rating-star'></label>
+         <input type='radio' name='tableSpace' class='rating-input' id='radio-3' value='3'>
+         <label for= 'radio-3'class='rating-star'></label>
+         <input type='radio' name='tableSpace' class='rating-input' id='radio-2' value='2'>
+         <label for= 'radio-2'class='rating-star'></label>
+         <input type='radio' name='tableSpace' class='rating-input' id='radio-1' value='1'>
+         <label for= 'radio-1'class='rating-star'></label>
+         </span>
          <br />
-         <label name='hours'>Hours</label>
-         <input type='radio' name='hours' value='1'>
-         <input type='radio' name='hours' value='2'>
-         <input type='radio' name='hours' value='3'>
-         <input type='radio' name='hours' value='4'>
-         <input type='radio' name='hours' value='5'>
+         <label class='text-label' name='hours'>Hours</label>
+         <span class = 'rating'>
+         <input type='radio' name='hours' class='rating-input' id='radio-5' value='5'>
+         <label for= 'radio-5'class='rating-star'></label>
+         <input type='radio' name='hours' class='rating-input' id='radio-4' value='4'>
+         <label for= 'radio-4'class='rating-star'></label>
+         <input type='radio' name='hours' class='rating-input' id='radio-3' value='3'>
+         <label for= 'radio-3'class='rating-star'></label>
+         <input type='radio' name='hours' class='rating-input' id='radio-2' value='2'>
+         <label for= 'radio-2'class='rating-star'></label>
+         <input type='radio' name='hours' class='rating-input' id='radio-1' value='1'>
+         <label for= 'radio-1'class='rating-star'></label>
+         </span>
          <br />
-         <label name='cashMoney'>Affordability</label>
-         <input type='radio' name='cashMoney' value='1'>
-         <input type='radio' name='cashMoney' value='2'>
-         <input type='radio' name='cashMoney' value='3'>
-         <input type='radio' name='cashMoney' value='4'>
-         <input type='radio' name='cashMoney' value='5'>
+         <label class='text-label' name='cashMoney'>Affordability</label>
+         <span class = 'rating'>
+         <input type='radio' name='cashMoney' class='rating-input' id='radio-5' value='5'>
+         <label for= 'radio-5'class='rating-star'></label>
+         <input type='radio' name='cashMoney' class='rating-input' id='radio-4' value='4'>
+         <label for= 'radio-4'class='rating-star'></label>
+         <input type='radio' name='cashMoney' class='rating-input' id='radio-3' value='3'>
+         <label for= 'radio-3'class='rating-star'></label>
+         <input type='radio' name='cashMoney' class='rating-input' id='radio-2' value='2'>
+         <label for= 'radio-2'class='rating-star'></label>
+         <input type='radio' name='cashMoney' class='rating-input' id='radio-1' value='1'>
+         <label for= 'radio-1'class='rating-star'></label>
+         </span>
          <br />
-         <label name='googleReview'>Google review score</label>
-         <input type='radio' name='googleReview' value='1'>
-         <input type='radio' name='googleReview' value='2'>
-         <input type='radio' name='googleReview' value='3'>
-         <input type='radio' name='googleReview' value='4'>
-         <input type='radio' name='googleReview' value='5'>
+         <label class='text-label' name='googleReview'>Google review score</label>
+         <span class = 'rating'>
+         <input type='radio' name='googleReivew' class='rating-input' id='radio-5' value='5'>
+         <label for= 'radio-5'class='rating-star'></label>
+         <input type='radio' name='googleReivew' class='rating-input' id='radio-4' value='4'>
+         <label for= 'radio-4'class='rating-star'></label>
+         <input type='radio' name='googleReivew' class='rating-input' id='radio-3' value='3'>
+         <label for= 'radio-3'class='rating-star'></label>
+         <input type='radio' name='googleReivew' class='rating-input' id='radio-2' value='2'>
+         <label for= 'radio-2'class='rating-star'></label>
+         <input type='radio' name='googleReivew' class='rating-input' id='radio-1' value='1'>
+         <label for= 'radio-1'class='rating-star'></label>
+         </span>
          <br />
          <input type='submit' value='submit'>
        </fieldset>
