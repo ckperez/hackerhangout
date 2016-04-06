@@ -331,14 +331,14 @@ select{
 
 #image-logo{
   position: absolute;
-  top:-23px;
+  top: 75px;
   width: 40px;
   height: 40px;
 }
 
 footer{
   position: relative;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 #black-background {
@@ -381,4 +381,52 @@ footer{
 
 nav a:hover {
   color: #FF7A7A;
+}
+
+#team-bios {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 100px;
+  padding-left: 100px;
+  flex-wrap: wrap;
+}
+
+.Chris {
+  width: 250px;
+}
+
+.Claire {
+  width: 250px;
+}
+
+.Rashid {
+  width: 250px;
+}
+
+.Drew {
+  width: 250px;
+}
+
+.team-pics {
+  width: 125px;
+  height: 150px;
+  border-radius: 50%;
+  margin-left: 22%;
+}
+
+.team-name {
+  text-align: center;
+}
+
+.about-us-header {
+  padding-bottom: 70px;
+}
+
+.bio-content {
+  font-family: 'Roboto', sans-serif;
+}
+
+.footer {
+  padding-top: 100px;
 }
