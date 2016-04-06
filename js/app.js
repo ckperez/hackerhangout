@@ -35,7 +35,7 @@ function HackerSpace(name, address, website){
   this.name = name;
   this.address = address;
   this.website = website;
-};
+}
 
 HackerSpace.prototype.addRatings = function(booze, coffee, space, reviews, affordability, hours, wifi){
   this.booze = booze;
@@ -58,6 +58,17 @@ new HackerSpace('Tilikum Place Cafe', 'Tilikum Place Cafe', 'http://www.tilikump
 new HackerSpace('Cherry Street Coffee House', '2719 1st Ave, Seattle, WA 98121', 'http://cherryst.com/').addRatings(0, 4.3, 3.0, 4.0, 4.5, 3.6, 4.2);
 new HackerSpace('Drip City', '2929 1st Ave, Seattle, WA 98121', 'http://dripcitycoffee.com/').addRatings(3.5, 4.8, 4.5, 4.8, 4.4, 3.8, 4.8);
 new HackerSpace('Starbucks Denny Triangle', '521 Wall St, Seatt,e WA 98121', 'http://www.starbucks.com/store/114075/us/city-university/521-wall-st-seattle-wa-98121').addRatings(0, 4.2, 4, 4.2, 4.5, 3.9, 4.8);
+
+new HackerSpace('Honor Coffee & Tea', '100 4th Ave N Seattle, WA 98109', 'http://www.honorcoffee.com/').addRatings(0, 4.4, 3.9, 4.4, 4.2, 3.8, 4.7);
+new HackerSpace('Artisan Coffee', '2523 5th Ave Seattle, WA 98121', 'http://www.artisancafeonvine.com/').addRatings(0, 4.3, 4.0, 4.4, 4.4, 3.5, 4.5);
+new HackerSpace('Bedlam Coffee', '2231 2nd Ave. Seattle, WA 98121', 'http://www.bedlamcoffee.com/').addRatings(0, 4.4, 4.5, 4.3, 4.3, 4.0, 4.4);
+new HackerSpace('Caffee Zingaro', '127 Mercer St. Seattle, WA 98109',	'https://www.yelp.com/biz/caffe-zingaro-seattle-3').addRatings(0, 4.5, 4.3, 4.4, 4.4, 3.7, 4.5);
+new HackerSpace('Mamnoon Street', '2020 6th Ave, Seattle, WA 98121', 'http://www.mamnoonstreet.com').addRatings(4.5, 4.3, 4.3, 4.5, 3.9, 3.4, 4.2);
+new HackerSpace('Espresso Elegance', '122 Elliott Ave W. Seattle, WA 98119', 'http://www.espressoelegance.com').addRatings(0, 4.2, 4.4, 4.3, 4.4, 3.4, 4.3);
+new HackerSpace('Just Crepes', '2502 5th Ave. Seattle, WA 98121', 'https://www.yelp.com/biz/just-crepes-seattle').addRatings(0, 4.2, 3.9, 3.7, 4.5, 3.7, 4.2);
+new HackerSpace('The Seattle Grind', '516 Harrison St. Seattle, WA 98109', 'http://www.theseattlegrind.com/').addRatings(0, 4.3, 3.8, 4.0, 4.5, 3.6, 3.9);
+new HackerSpace('Some Random Bar', '2604 1st Ave Seatt,e WA 98121', 'http://www.somerandombar.com').addRatings(4.6, 3.9, 3.6, 4.7, 4.5, 3.7, 3.8);
+new HackerSpace('Olympic Sculpture Park', '2901 Western Ave. Seattle, WA 98121', 'http://www.seattleartmuseum.org/visit/olympic-sculpture-park').addRatings(0, 0, 3.5, 4.8, 0, 3.8, 4.2);
 
 console.log('hackerSpaceArray ', hackerSpaceArray);
 
@@ -92,11 +103,7 @@ function clearBox(elementID) {
 
 function collectComparisonForm(event){
   event.preventDefault();
-  var localArray = [];
-  for (var i = 0; i < hackerSpaceArray.length; i++) {
-    localArray.push(JSON.parse(JSON.stringify(hackerSpaceArray[i])));
-  }
-  console.log('local Array is ', localArray);
+
   clearBox('chart-div');
   var elChartDiv = document.getElementById('chart-div');
   var elCanvas = document.createElement('canvas');
@@ -111,32 +118,19 @@ function collectComparisonForm(event){
   var positivePref = event.target.positivePreference.value;
   var negativePref = event.target.negativePreference.value;
 
-  for (i = 0; i < localArray.length; i++){
-    if(dropDownName1 == localArray[i].name){
-      dropDownName1 = localArray[i];
-      if(dropDownName1[positivePref] > 2.5){
-        dropDownName1[positivePref] *= 1.2;
-      } else {
-        dropDownName1[positivePref] *= 0.75;
-      }
-      if(dropDownName1[negativePref] > 2.5) {
-        dropDownName1[negativePref] *= 0.75;
-      }
+  for (i = 0; i < hackerSpaceArray.length; i++){
+    if(dropDownName1 == hackerSpaceArray[i].name){
+      dropDownName1 = hackerSpaceArray[i];
+      dropDownName1[positivePref] *= 2;
+      dropDownName1[negativePref] *= 0.5;
     }
-    if(dropDownName2 == localArray[i].name){
-      dropDownName2 = localArray[i];
-      if(dropDownName2[positivePref] > 2.5){
-        dropDownName2[positivePref] *= 1.2;
-      } else {
-        dropDownName2[positivePref] *= 0.75;
-      }
-      if(dropDownName2[negativePref] > 2.5) {
-        dropDownName2[negativePref] *= 0.75;
-      }
+    if(dropDownName2 == hackerSpaceArray[i].name){
+      dropDownName2 = hackerSpaceArray[i];
+      dropDownName2[positivePref] *= 2;
+      dropDownName2[negativePref] *= 0.5;
       console.log(dropDownName2, ' is dropdown name 2');
     }
   }
-
   var scoreHackZone1 = 0;
   var scoreHackZone2 = 0;
   for (i = 0; i < reviewCriteriaArray.length; i++) {
@@ -167,21 +161,29 @@ function collectComparisonForm(event){
   hackerZone2.setData(dropDownName2);
   console.log(hackerZone2, 'is hackerZone2');
 
-  var options = {
-    legendTemplate: '<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>'
-  };
+  // var options = {
+  //   legendTemplate: '<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>'
+  // };
 
   var data = {
     labels: reviewCriteriaArray,
     datasets: [hackerZone1, hackerZone2]
   };
   var ctx = document.getElementById('canvas').getContext('2d');
+<<<<<<< HEAD
+  var myRadarChart = new Chart(ctx).Radar(data);
+=======
 
   var myRadarChart = new Chart(ctx).Radar(data, options);
 
   console.log(hackerSpaceArray, ' arrayed data');
   console.log(localArray, ' local array');
+>>>>>>> 4d1b53294d01229e17278cd793d42c884f1f73cf
 
+  dropDownName1[positivePref] /= 2;
+  dropDownName1[negativePref] /= 0.5;
+  dropDownName2[positivePref] /= 2;
+  dropDownName2[negativePref] /= 0.5;
 };
 
 function RadarChartData(labelName, color, colorFill){
@@ -206,14 +208,16 @@ if (indexID){
   submitComparisonForm.addEventListener('submit', collectComparisonForm);
 }
 
+<<<<<<< HEAD
+=======
 mapDivID.addEventListener('click', removeKillScroll);
 mapDivID.addEventListener('mouseleave', returnKillScroll);
 mapTip.addEventListener('click', hideMapTip);
 
+>>>>>>> 4d1b53294d01229e17278cd793d42c884f1f73cf
 function getInputFromLocalStorage(){
   var updatedHackerSpaceArray = JSON.parse(localStorage.getItem('updatedHackerSpaceArray'));
   if (updatedHackerSpaceArray){
     hackerSpaceArray = updatedHackerSpaceArray;
   }
 }
-killMapScroll();
