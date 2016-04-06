@@ -67,3 +67,29 @@ nav a {
 .hacker-map {
   border-style: none;
 }
+
+#image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#image-logo{
+  position: absolute;
+  top:-23px;
+  width: 40px;
+  height: 40px;
+}
+
+footer{
+  position: relative;
+}
+
+#black-background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #212121;
+  color: white;
+  padding: 20px 10px;
+}
