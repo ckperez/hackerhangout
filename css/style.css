@@ -76,6 +76,27 @@ nav a {
   transition: all .5s;
 }
 
+.click-to-interact{
+  color: #888;
+  opacity: .6;
+  width: 100%;
+  text-align: center;
+  top: 150px;
+  z-index: 6;
+  position: absolute;
+  font-size: 80px;
+  transition: all 5s;
+}
+
+.click-to-interact:hover{
+  cursor: default;
+}
+
+.map-tip-be-gone{
+  display: none;
+  transition: all 5s;
+}
+
 .google-hider-be-gone{
   transition: all .5s;
   transform: translateY(-49px);
