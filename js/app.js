@@ -7,6 +7,7 @@ var mapID = document.getElementById('iframe-map');
 var mapDivID = document.getElementById('iframe-container');
 
 var googleHider = document.getElementsByClassName('google-hider')[0];
+var mapTip = document.getElementsByClassName('click-to-interact')[0];
 
 function killMapScroll(){
   mapID.classList.add('kill-scroll');
@@ -15,12 +16,20 @@ function killMapScroll(){
 function removeKillScroll(){
   mapID.classList.remove('kill-scroll');
   googleHider.classList.add('google-hider-be-gone');
+  mapTip.classList.add('map-tip-be-gone');
 };
 
 function returnKillScroll(){
   googleHider.classList.remove('google-hider-be-gone');
+  mapTip.classList.remove('map-tip-be-gone');
   killMapScroll();
 };
+
+function hideMapTip(){
+  mapTip.classList.add('map-tip-be-gone');
+  mapID.classList.remove('kill-scroll');
+  googleHider.classList.add('google-hider-be-gone');
+}
 
 function HackerSpace(name, address, website){
   this.name = name;
@@ -198,6 +207,7 @@ if (indexID){
 
 mapDivID.addEventListener('click', removeKillScroll);
 mapDivID.addEventListener('mouseleave', returnKillScroll);
+mapTip.addEventListener('click', hideMapTip);
 
 function getInputFromLocalStorage(){
   var updatedHackerSpaceArray = JSON.parse(localStorage.getItem('updatedHackerSpaceArray'));
