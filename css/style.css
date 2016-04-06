@@ -16,6 +16,7 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 1;
+
 }
 
 nav ul {
@@ -36,9 +37,24 @@ nav a {
   text-decoration: none;
 }
 
+#inputID {
+  background-image: url('http://www.wearemi-retail.com/wp-content/uploads/2015/07/Mi1589_ArcV_Mi_Cinemagraphs_11_Carrington_Street_Coffee_View_01_BW.gif');
+  background-repeat: round;
+}
+
 #inputID h1 {
   padding-top: 50px;
   margin-top: 0px;
+  text-align: center;
+  color: #FF7A7A;
+  -webkit-text-stroke: 1px black;
+   text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
 }
 
 #landing-page{
@@ -85,10 +101,34 @@ nav a {
   width: 200px;
   text-align: right;
   padding-right: 10px;
+  margin-left: 25%;
 }
+
+.text-label, .input-text, .rating-star {
+  margin: 5px auto 5px auto;
+}
+
+/*.radio-container {
+  display: flex;
+  justify-content: space-between;
+}*/
+
+
 
 #add-review fieldset {
   width:90%;
+  margin-bottom: 55px;
+  background-color: white;
+}
+
+.minimum{
+ position: relative;
+ left: 25%;
+}
+
+.maximum {
+  position: relative;
+  right: 150px;
 }
 
 .rating {
