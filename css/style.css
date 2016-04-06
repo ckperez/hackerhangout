@@ -2,7 +2,6 @@ body {
   background-color: white;
   color: #5C5C5C;
   padding: 0;
-  font-family: Helvetica, sans-serif;
   margin: 0;
 }
 
@@ -21,11 +20,13 @@ nav {
   position: fixed;
   width: 100%;
   z-index: 1;
+
 }
 
 nav ul {
   list-style: none;
   margin: 0;
+  padding: 0;
   font-family: 'Ubuntu', sans-serif;
 }
 
@@ -39,6 +40,24 @@ nav li {
 nav a {
   color: white;
   text-decoration: none;
+}
+
+#inputID {
+  background-image: url('http://www.wearemi-retail.com/wp-content/uploads/2015/07/Mi1589_ArcV_Mi_Cinemagraphs_11_Carrington_Street_Coffee_View_01_BW.gif');
+  background-repeat: round;
+}
+
+#inputID h1 {
+  padding: 70px 5px 25px 5px;
+  width: 80%;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  color: #fff;
+  background-color: #FF7a7a;
+  font-family: 'Ubuntu', sans-serif;
+  border-radius: 7px;
 }
 
 #landing-page{
@@ -116,6 +135,77 @@ nav a {
   border-style: none;
 }
 
+#new-review-form {
+  width: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  padding-bottom: 10px;
+}
+
+#new-review-form .text-label {
+  float: left;
+  width: 200px;
+  text-align: right;
+  padding-right: 10px;
+  margin-left: 25%;
+}
+
+.text-label, .input-text, .rating-star{
+  margin: 10px auto 10px auto;
+}
+
+#new-review-form .rating-header {
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  width: 100%;
+  text-align: center;
+  padding-right: 10px;
+}
+
+#add-review button{
+  margin-left: 50%;
+  margin-bottom: 30px;
+}
+
+#add-review fieldset{
+  width:60%;
+  margin-bottom: 55px;
+  background-color: white;
+  padding-top: 40px;
+  border: #fff solid 2px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rating {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.rating-input {
+  float: right;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin: 0 0 0 -16px;
+  opacity: 0;
+}
+.rating-star, .rating:hover .rating-star {
+  position: relative;
+  float: right;
+  margin-left: 10px;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background: no-repeat center/130% url('../img/star.png');
+}
+.rating:hover .rating-star:hover, .rating:hover .rating-star:hover ~ .rating-star, .rating-input:checked ~ .rating-star {
+  background-position: 0 0;
+  background: no-repeat center/130% url('../img/color-star.png');
+}
+
 .chart-div{
   position: relative;
 }
@@ -182,7 +272,6 @@ select{
   text-align: center;
   margin-right: 12px;
 }
-/**/
 
 #chart-form input[type='radio'] {
     -webkit-appearance:none;
@@ -208,7 +297,7 @@ select{
     background:#FFF;
     box-shadow:-1px -1px 7px 3px #FF7A7A inset;
 }
-/**/
+
 #chart-form input{
   margin: 30px 1px -2px 4px;
 }
@@ -217,7 +306,7 @@ select{
   margin: 0;
 }
 
-#chart-form button{
+#chart-form button, #add-review button{
   background-color: #FF7A7A;
   color: white;
   border-style: none;
@@ -229,10 +318,11 @@ select{
   margin-top: 60px;
 }
 
-#chart-form button:hover{
+#chart-form button:hover, #add-review button:hover{
   box-shadow: 0 1px 1px #333;
   transform: scale(1.1);
 }
+
 #image {
   display: flex;
   align-items: center;
@@ -248,6 +338,7 @@ select{
 
 footer{
   position: relative;
+  margin-top: 50px;
 }
 
 #black-background {
@@ -288,14 +379,6 @@ footer{
   border-radius: 4px;
 }
 
-#hangout:hover {
-  background-color: #FF7A7A;
-}
-
-#about-us:hover {
-  background-color: #FF7A7A;
-}
-
-#home:hover {
-  background-color: #FF7A7A;
+nav a:hover {
+  color: #FF7A7A;
 }
