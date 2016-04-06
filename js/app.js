@@ -167,6 +167,7 @@ function collectComparisonForm(event){
     datasets: [hackerZone1, hackerZone2]
   };
   var ctx = document.getElementById('canvas').getContext('2d');
+
   var myRadarChart = new Chart(ctx).Radar(data, options);
 
   console.log(hackerSpaceArray, ' arrayed data');
