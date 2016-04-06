@@ -42,12 +42,12 @@ nav a {
   text-decoration: none;
 }
 
-#inputID {
+.inputID {
   background-image: url('http://www.wearemi-retail.com/wp-content/uploads/2015/07/Mi1589_ArcV_Mi_Cinemagraphs_11_Carrington_Street_Coffee_View_01_BW.gif');
   background-repeat: round;
 }
 
-#inputID h1 {
+.inputID h1 {
   padding: 70px 5px 25px 5px;
   width: 80%;
   margin-top: 0px;
@@ -135,26 +135,26 @@ nav a {
   border-style: none;
 }
 
-#new-review-form {
+.new-review-form {
   width: 100%;
   margin: 0;
   font-family: 'Roboto', sans-serif;
   padding-bottom: 10px;
 }
 
-#new-review-form .text-label {
+.new-review-form .text-label {
   float: left;
   width: 200px;
   text-align: right;
   padding-right: 10px;
-  margin-left: 25%;
+  margin-left: 15%;
 }
 
 .text-label, .input-text, .rating-star{
   margin: 10px auto 10px auto;
 }
 
-#new-review-form .rating-header {
+.new-review-form .rating-header {
   float: left;
   margin-left: auto;
   margin-right: auto;
@@ -164,12 +164,12 @@ nav a {
   padding-right: 10px;
 }
 
-#add-review button{
+.add-review button{
   margin-left: 50%;
   margin-bottom: 30px;
 }
 
-#add-review fieldset{
+.add-review fieldset{
   width:60%;
   margin-bottom: 55px;
   background-color: white;
@@ -178,32 +178,34 @@ nav a {
   margin-left: auto;
   margin-right: auto;
 }
-
 .rating {
-  overflow: hidden;
-  display: inline-block;
+    overflow: hidden;
+    display: inline-block;
+    font-size: 0;
+    position: relative;
 }
-
 .rating-input {
-  float: right;
-  width: 16px;
-  height: 16px;
-  padding: 0;
-  margin: 0 0 0 -16px;
-  opacity: 0;
+    float: right;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    margin: 0 0 0 -16px;
+    opacity: 0;
 }
-.rating-star, .rating:hover .rating-star {
-  position: relative;
-  float: right;
-  margin-left: 10px;
-  display: block;
-  width: 16px;
-  height: 16px;
-  background: no-repeat center/130% url('../img/star.png');
+.rating:hover .rating-star:hover,
+.rating:hover .rating-star:hover ~ .rating-star,
+.rating-input:checked ~ .rating-star {
+    background-position: 0 0;
 }
-.rating:hover .rating-star:hover, .rating:hover .rating-star:hover ~ .rating-star, .rating-input:checked ~ .rating-star {
-  background-position: 0 0;
-  background: no-repeat center/130% url('../img/color-star.png');
+.rating-star,
+.rating:hover .rating-star {
+    position: relative;
+    float: right;
+    margin-left: 10px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: url('http://kubyshkin.ru/samples/star-rating/star.png') 0 -16px;
 }
 
 .chart-div{
@@ -307,7 +309,7 @@ select{
   margin: 0;
 }
 
-#chart-form button, #add-review button{
+#chart-form button, .add-review button{
   background-color: #FF7A7A;
   color: white;
   border-style: none;
@@ -319,7 +321,7 @@ select{
   margin-top: 60px;
 }
 
-#chart-form button:hover, #add-review button:hover{
+#chart-form button:hover, .add-review button:hover{
   box-shadow: 0 1px 1px #333;
   transform: scale(1.1);
 }
