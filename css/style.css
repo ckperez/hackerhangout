@@ -2,7 +2,6 @@ body {
   background-color: white;
   color: #5C5C5C;
   padding: 0;
-  font-family: Helvetica, sans-serif;
   margin: 0;
 }
 
@@ -44,7 +43,7 @@ nav a {
 }
 
 #inputID h1 {
-  padding: 50px 5px 25px 5px;
+  padding: 70px 5px 25px 5px;
   width: 80%;
   margin-top: 0px;
   margin-right: auto;
@@ -111,12 +110,13 @@ nav a {
 }
 
 #new-review-form {
-  margin: 10px;
-  padding-bottom: 10px;
   width: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  padding-bottom: 10px;
 }
 
-#new-review-form .text-label, #new-review-form .rating-header {
+#new-review-form .text-label {
   float: left;
   width: 200px;
   text-align: right;
@@ -124,14 +124,33 @@ nav a {
   margin-left: 25%;
 }
 
-.text-label, .input-text, .rating-star, .rating-header{
-  margin: 5px auto 5px auto;
+.text-label, .input-text, .rating-star{
+  margin: 10px auto 10px auto;
 }
 
-#add-review fieldset {
-  width:90%;
+#new-review-form .rating-header {
+  float: left;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  width: 100%;
+  text-align: center;
+  padding-right: 10px;
+}
+
+#add-review button{
+  margin-left: 50%;
+  margin-bottom: 30px;
+}
+
+#add-review fieldset{
+  width:60%;
   margin-bottom: 55px;
   background-color: white;
+  padding-top: 40px;
+  border: #fff solid 2px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .rating {
@@ -293,6 +312,7 @@ select{
 
 footer{
   position: relative;
+  margin-top: 50px;
 }
 
 #black-background {
@@ -333,14 +353,6 @@ footer{
   border-radius: 4px;
 }
 
-#hangout:hover {
-  background-color: #FF7A7A;
-}
-
-#about-us:hover {
-  background-color: #FF7A7A;
-}
-
-#home:hover {
-  background-color: #FF7A7A;
+nav a:hover {
+  color: #FF7A7A;
 }
