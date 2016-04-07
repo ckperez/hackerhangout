@@ -11,7 +11,7 @@ var mapTip = document.getElementsByClassName('click-to-interact')[0];
 
 function killMapScroll(){
   mapID.classList.add('kill-scroll');
-};
+}
 
 function removeKillScroll(){
   mapID.classList.remove('kill-scroll');
@@ -214,13 +214,14 @@ RadarChartData.prototype.setData = function(inputObject){
 };
 
 var submitComparisonForm = document.getElementById('chart-form');
+
 if (indexID){
   submitComparisonForm.addEventListener('submit', collectComparisonForm);
+  mapDivID.addEventListener('click', removeKillScroll);
+  mapDivID.addEventListener('mouseleave', returnKillScroll);
+  mapTip.addEventListener('click', hideMapTip);
+  killMapScroll();
 }
-
-mapDivID.addEventListener('click', removeKillScroll);
-mapDivID.addEventListener('mouseleave', returnKillScroll);
-mapTip.addEventListener('click', hideMapTip);
 
 function getInputFromLocalStorage(){
   var updatedHackerSpaceArray = JSON.parse(localStorage.getItem('updatedHackerSpaceArray'));
@@ -228,4 +229,3 @@ function getInputFromLocalStorage(){
     hackerSpaceArray = updatedHackerSpaceArray;
   }
 }
-killMapScroll();
