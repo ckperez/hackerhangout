@@ -92,10 +92,12 @@ nav a {
 }
 
 video{
-  min-width: calc(100% + 100px);
-  min-height: 100%;
-  z-index: -100;
+  width: 100%;
+  height: 100%;
+  /* z-index: -100; */
   margin: auto;
+  object-fit: cover;
+
 }
 
 .google-hider{
@@ -131,7 +133,7 @@ video{
 
 .google-hider-be-gone{
   transition: all .5s;
-  transform: translateY(-49px);
+  transform: translateY(-46px);
 }
 
 .kill-scroll {
