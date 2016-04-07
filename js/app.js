@@ -158,8 +158,10 @@ function collectComparisonForm(event){
 
   if (scoreHackZone1 >= scoreHackZone2) {
     var winner = dropDownName1;
+    var loser = dropDownName2;
   } else {
     winner = dropDownName2;
+    loser = dropDownName1;
   }
 
   var elWinnerStatement = document.createElement('p');
@@ -172,11 +174,11 @@ function collectComparisonForm(event){
   elChartDiv.appendChild(elWinnerLink);
   console.log('elWinnerStatement ', elWinnerStatement);
 
-  var hackerZone1 = new RadarChartData(dropDownName1.name, 'rgba(220, 220, 220, 1)', 'rgba(220, 220, 220, 0.2)');
-  hackerZone1.setData(dropDownName1);
+  var hackerZone1 = new RadarChartData(loser.name, 'rgba(220, 220, 220, 1)', 'rgba(220, 220, 220, 0.4)');
+  hackerZone1.setData(loser);
   console.log(hackerZone1, ' is hackerZone1');
-  var hackerZone2 = new RadarChartData(dropDownName2.name, 'rgba(151, 187, 205, 1)', 'rgba(151, 187, 205, 0.2)');
-  hackerZone2.setData(dropDownName2);
+  var hackerZone2 = new RadarChartData(winner.name, 'rgba(255, 122, 122, 1)', 'rgba(255, 122, 122, 0.2)');
+  hackerZone2.setData(winner);
   console.log(hackerZone2, 'is hackerZone2');
 
   var options = {
