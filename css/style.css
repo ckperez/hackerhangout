@@ -409,6 +409,7 @@ select{
 .team-mission{
   padding: 5%;
   margin: auto;
+  margin-bottom: 9vh;
 }
 
 .team-mission h1{
@@ -483,6 +484,7 @@ nav a:hover {
 
 .bio-content {
   font-family: 'Roboto', sans-serif;
+  margin-top: 5vh;
 }
 
 .footer {
