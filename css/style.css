@@ -3,6 +3,7 @@ body {
   color: #5C5C5C;
   padding: 0;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 header{
@@ -167,7 +168,7 @@ section:nth-of-type(2){
   width: 200px;
   text-align: right;
   padding-right: 10px;
-  margin-left: 15%;
+  margin-left: calc(50% - 250px);
 }
 
 .text-label, .input-text, .rating-star{
@@ -187,6 +188,7 @@ section:nth-of-type(2){
 .add-review button{
   margin-left: 50%;
   margin-bottom: 30px;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .add-review fieldset{
@@ -239,7 +241,7 @@ section:nth-of-type(2){
   width: 490px;
   margin-bottom: -400px;
   padding-top: 70px;
-  padding-left: 20px;
+  padding-left: 2px;
 }
 
 ol li{
@@ -249,7 +251,7 @@ ol li{
 #review-page{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -340,6 +342,7 @@ select{
   box-shadow: 0 2px 2px #555;
   transition: all .5s;
   margin-top: 60px;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 #chart-form button:hover, .add-review button:hover{
@@ -400,6 +403,12 @@ select{
 
 nav a:hover {
   color: #FF7A7A;
+}
+
+#chart-div a{
+  color: #FF7A7A;
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
 }
 
 #team-bios {
