@@ -70,7 +70,6 @@ new HackerSpace('The Seattle Grind', '516 Harrison St. Seattle, WA 98109', 'http
 new HackerSpace('Some Random Bar', '2604 1st Ave Seatt,e WA 98121', 'http://www.somerandombar.com').addRatings(4.6, 3.9, 3.6, 4.7, 4.5, 3.7, 3.8);
 new HackerSpace('Olympic Sculpture Park', '2901 Western Ave. Seattle, WA 98121', 'http://www.seattleartmuseum.org/visit/olympic-sculpture-park').addRatings(0, 0, 3.5, 4.8, 0, 3.8, 4.2);
 
-
 console.log('hackerSpaceArray ', hackerSpaceArray);
 
 var dropdown1 = document.getElementById('hangouts-dropdown-1');
