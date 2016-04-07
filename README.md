@@ -8,11 +8,10 @@
 Hacker Hangout is an app for coders living in Seattle who want to find the best location to get out of the house and start coding in a work friendly space. Hacker Hangout allows the user to compare locations and choose the best place depending on what qualities the user is interested in on that particular day. We want all our hackers to find their hacky place!
 
 We rate our locations on:
-
 -Wifi Quality
 -Booze
 -Google review score
--Opening hours
+-Opening Hours
 -Affordability
 -Coffee
 -Table Space
