@@ -73,7 +73,7 @@ nav a {
 
 .landing-page{
   height: 100vh;
-  background-image: url('http://www.wearemi-retail.com/wp-content/uploads/2015/07/Mi1589_ArcV_Mi_Cinemagraphs_11_Carrington_Street_Coffee_View_01_BW.gif');
+  background-image: url('../img/coffee-shop.gif');
   background-size: cover;
   background-position: bottom;
   position: relative;
@@ -514,7 +514,7 @@ nav a:hover {
 }
 
 .chris-again {
-  background-image: url('../img/IMG_7963.jpg');
+  background-image: url('../img/chris.jpg');
   background-position: center;
   background-size: cover;
 }
