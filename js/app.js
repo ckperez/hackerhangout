@@ -68,7 +68,7 @@ new HackerSpace('Espresso Elegance', '122 Elliott Ave W. Seattle, WA 98119', 'ht
 new HackerSpace('Just Crepes', '2502 5th Ave. Seattle, WA 98121', 'https://www.yelp.com/biz/just-crepes-seattle').addRatings(0, 4.2, 3.9, 3.7, 4.5, 3.7, 4.2);
 new HackerSpace('The Seattle Grind', '516 Harrison St. Seattle, WA 98109', 'http://www.theseattlegrind.com/').addRatings(0, 4.3, 3.8, 4.0, 4.5, 3.6, 3.9);
 new HackerSpace('Some Random Bar', '2604 1st Ave Seatt,e WA 98121', 'http://www.somerandombar.com').addRatings(4.6, 3.9, 3.6, 4.7, 4.5, 3.7, 3.8);
-new HackerSpace('Olympic Sculpture Park', '2901 Western Ave. Seattle, WA 98121', 'http://www.seattleartmuseum.org/visit/olympic-sculpture-park').addRatings(0, 0, 3.5, 4.8, 0, 3.8, 4.2);
+new HackerSpace('Olympic Sculpture Park', '2901 Western Ave. Seattle, WA 98121', 'http://www.seattleartmuseum.org/visit/olympic-sculpture-park').addRatings(0, 0, 3.5, 4.8, 5, 3.8, 4.2);
 
 console.log('hackerSpaceArray ', hackerSpaceArray);
 
@@ -127,22 +127,29 @@ function collectComparisonForm(event){
       dropDownName1 = localArray[i];
       if(dropDownName1[positivePref] > 2.5){
         dropDownName1[positivePref] *= 1.2;
+        dropDownName1[positivePref] = Math.round(dropDownName1[positivePref] * 10 ) / 10;
       } else {
         dropDownName1[positivePref] *= 0.75;
+        dropDownName1[positivePref] = Math.round(dropDownName1[positivePref] * 10 ) / 10;
       }
       if(dropDownName1[negativePref] > 2.5) {
         dropDownName1[negativePref] *= 0.75;
+        dropDownName1[negativePref] = Math.round(dropDownName1[negativePref] * 10 ) / 10;
       }
     }
+
     if(dropDownName2 == localArray[i].name){
       dropDownName2 = localArray[i];
       if(dropDownName2[positivePref] > 2.5){
         dropDownName2[positivePref] *= 1.2;
+        dropDownName2[positivePref] = Math.round(dropDownName2[positivePref] * 10 ) / 10;
       } else {
         dropDownName2[positivePref] *= 0.75;
+        dropDownName2[positivePref] = Math.round(dropDownName2[positivePref] * 10 ) / 10;
       }
       if(dropDownName2[negativePref] > 2.5) {
         dropDownName2[negativePref] *= 0.75;
+        dropDownName2[negativePref] = Math.round(dropDownName2[negativePref] * 10 ) / 10;
       }
       console.log(dropDownName2, ' is dropdown name 2');
     }
@@ -157,12 +164,14 @@ function collectComparisonForm(event){
 
   if (scoreHackZone1 >= scoreHackZone2) {
     var winner = dropDownName1;
+    var loser = dropDownName2;
   } else {
     winner = dropDownName2;
+    loser = dropDownName1;
   }
 
   var elWinnerStatement = document.createElement('p');
-  var winnerStatement = 'The winner is: ' + winner.name + ' with the top score! ';
+  var winnerStatement = 'The winner is... ' + winner.name + ' with the top score! ';
   elWinnerStatement.textContent = winnerStatement;
   elChartDiv.appendChild(elWinnerStatement);
   var elWinnerLink = document.createElement('a');
@@ -171,11 +180,11 @@ function collectComparisonForm(event){
   elChartDiv.appendChild(elWinnerLink);
   console.log('elWinnerStatement ', elWinnerStatement);
 
-  var hackerZone1 = new RadarChartData(dropDownName1.name, 'rgba(220, 220, 220, 1)', 'rgba(220, 220, 220, 0.2)');
-  hackerZone1.setData(dropDownName1);
+  var hackerZone1 = new RadarChartData(loser.name, 'rgba(220, 220, 220, 1)', 'rgba(220, 220, 220, 0.4)');
+  hackerZone1.setData(loser);
   console.log(hackerZone1, ' is hackerZone1');
-  var hackerZone2 = new RadarChartData(dropDownName2.name, 'rgba(151, 187, 205, 1)', 'rgba(151, 187, 205, 0.2)');
-  hackerZone2.setData(dropDownName2);
+  var hackerZone2 = new RadarChartData(winner.name, 'rgba(255, 122, 122, 1)', 'rgba(255, 122, 122, 0.2)');
+  hackerZone2.setData(winner);
   console.log(hackerZone2, 'is hackerZone2');
 
   var options = {
@@ -192,8 +201,7 @@ function collectComparisonForm(event){
 
   console.log(hackerSpaceArray, ' arrayed data');
   console.log(localArray, ' local array');
-
-};
+}
 
 function RadarChartData(labelName, color, colorFill){
   this.label = labelName;
