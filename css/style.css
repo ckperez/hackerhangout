@@ -75,6 +75,7 @@ nav a {
 }
 
 #cta {
+  font-family: 'Ubuntu', sans-serif;
   width:300px;
   position: absolute;
   text-align: center;
@@ -96,12 +97,25 @@ nav a {
   transform: scale(1.1);
 }
 
+video{
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+  margin: auto;
+  object-fit: cover;
+
+}
+
+section:nth-of-type(2){
+  z-index: 0;
+  position: relative;
+}
+
 .google-hider{
   width:100%;
   height: 49px;
   background-color: #FF7A7A;
   position: absolute;
-  top: 100vh;
   z-index: 5;
   transition: all .5s;
 }
@@ -110,6 +124,7 @@ nav a {
   color: #888;
   opacity: .6;
   width: 100%;
+  font-family: 'Ubuntu', sans-serif;
   text-align: center;
   top: 150px;
   z-index: 6;
@@ -129,7 +144,7 @@ nav a {
 
 .google-hider-be-gone{
   transition: all .5s;
-  transform: translateY(-49px);
+  transform: translateY(-46px);
 }
 
 .kill-scroll {
@@ -345,11 +360,6 @@ select{
   height: 40px;
 }
 
-footer{
-  position: relative;
-  margin-top: 100px;
-}
-
 #black-background {
   display: flex;
   align-items: center;
@@ -438,7 +448,15 @@ nav a:hover {
 }
 
 .footer {
+  width: 100%;
   padding-top: 100px;
+  position: relative;
+  margin-top: 100px;
+}
+
+.about-us-footer{
+  position: absolute;
+  bottom: 0;
 }
 
 .github-image {

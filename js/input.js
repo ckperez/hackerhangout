@@ -13,7 +13,7 @@ buttonRows.push(googleReviewsRadioButtons = document.getElementsByName('google-r
 
 function handleReview(event){
   getInputFromLocalStorage();
-  event.preventDefault();
+  // event.preventDefault();
   var inputName = event.target.businessName.value;
   //console.log('input name = ' + inputName);
   var inputAddress = event.target.address.value;
