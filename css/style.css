@@ -48,8 +48,8 @@ nav a {
 }
 
 .inputID {
-  background-image: url('http://www.wearemi-retail.com/wp-content/uploads/2015/07/Mi1589_ArcV_Mi_Cinemagraphs_11_Carrington_Street_Coffee_View_01_BW.gif');
-  background-repeat: round;
+  background: url('http://www.wearemi-retail.com/wp-content/uploads/2015/07/Mi1589_ArcV_Mi_Cinemagraphs_11_Carrington_Street_Coffee_View_01_BW.gif') no-repeat center center fixed;
+  background-size: cover;
 }
 
 .inputID h1 {
