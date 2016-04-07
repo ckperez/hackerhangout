@@ -1,5 +1,4 @@
 # Hacker Hangout
-***
 
 ##Code Fellows 201 Final Project
 
@@ -16,8 +15,6 @@ We rate our locations on:
 - Coffee
 - Table Space
 
-***
-
 ##User Stories
 
 ###User:
@@ -32,8 +29,6 @@ We rate our locations on:
 - As developers we want to manage the project efficiently, splitting larger goals into smaller tasks.
 - As developers we want to handle pull requests and merges when they come up and keep our master branch clean.
 - As developers we want two pages that take user input, and use local storage to call back data.
-
-***
 
 ##About the Hackers:
 [Chris Perez](https://github.com/ckperez)
