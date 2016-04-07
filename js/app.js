@@ -165,7 +165,7 @@ function collectComparisonForm(event){
   }
 
   var elWinnerStatement = document.createElement('p');
-  var winnerStatement = 'The winner is: ' + winner.name + ' with the top score! ';
+  var winnerStatement = 'The winner is... ' + winner.name + ' with the top score! ';
   elWinnerStatement.textContent = winnerStatement;
   elChartDiv.appendChild(elWinnerStatement);
   var elWinnerLink = document.createElement('a');
