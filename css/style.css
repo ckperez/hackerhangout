@@ -476,14 +476,14 @@ nav a:hover {
 }
 
 .rashid-again {
-  background-image: url('../img/IMG_7963.jpg');
+  background-image: url('../img/meProfPic.jpeg');
   background-position: center;
   background-size: cover;
 }
 
 .rashid-again:hover {
   transform: rotateY();
-  background-image: url(../img/chrisgiph.gif);
+  background-image: url('../img/rashidgiphy.gif');
 }
 
 .drew-again {
