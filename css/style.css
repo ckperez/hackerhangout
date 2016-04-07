@@ -1,9 +1,14 @@
+html{
+  width: 100%;
+}
+
 body {
   background-color: white;
   color: #5C5C5C;
   padding: 0;
   margin: 0;
   font-family: 'Roboto', sans-serif;
+  width: 100%;
 }
 
 header{
@@ -16,7 +21,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   background-color: #212121;
-  padding: 15px 10px;
+  padding: 15px 0;
   color: white;
   position: fixed;
   width: 100%;
@@ -43,7 +48,7 @@ nav a {
   text-decoration: none;
 }
 
-#chart-div {
+.chart-div {
   margin-left: 30px;
   margin-top: 50px;
 }
@@ -66,7 +71,7 @@ nav a {
   border-radius: 7px;
 }
 
-#landing-page{
+.landing-page{
   height: 100vh;
   background-image: url('http://www.wearemi-retail.com/wp-content/uploads/2015/07/Mi1589_ArcV_Mi_Cinemagraphs_11_Carrington_Street_Coffee_View_01_BW.gif');
   background-size: cover;
@@ -75,7 +80,7 @@ nav a {
   z-index: 0;
 }
 
-#cta {
+.cta {
   font-family: 'Ubuntu', sans-serif;
   width:300px;
   position: absolute;
@@ -93,7 +98,7 @@ nav a {
   transition: all .5s;
 }
 
-#cta:hover{
+.cta:hover{
   box-shadow: 0 1px 1px #333;
   transform: scale(1.1);
 }
@@ -249,14 +254,16 @@ ol li{
   padding: 16px 0px;
 }
 
-#review-page{
+.review-page{
   display: flex;
-  flex-direction: row;
+  flex-flow:wrap-reverse;
   justify-content: space-around;
   font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-#chart-form{
+.chart-form{
   width: calc(100% - 500px);
   height: 400px;
   text-align: center;
@@ -264,13 +271,13 @@ ol li{
   margin-right: -120px;
 }
 
-#chart-form fieldset{
+.chart-form fieldset{
   padding-top: 16px;
   border-style: none;
   margin-right: 30px;
 }
 
-#chart-form select:first-of-type{
+.chart-form select:first-of-type{
   margin-right: 30px;
   margin-bottom: 30px;
 }
@@ -300,7 +307,7 @@ select{
   margin-right: 12px;
 }
 
-#chart-form input[type='radio'] {
+.chart-form input[type='radio'] {
     -webkit-appearance:none;
     width:16px;
     height:16px;
@@ -309,10 +316,10 @@ select{
     outline:none;
     box-shadow:0 0 2px 0px gray inset;
 }
-#chart-form input[type='radio']:hover {
+.chart-form input[type='radio']:hover {
     box-shadow:0 0 5px 0px orange inset;
 }
-#chart-form input[type='radio']:before {
+.chart-form input[type='radio']:before {
     content:'';
     display:block;
     width:100%;
@@ -320,12 +327,12 @@ select{
     margin: auto;
     border-radius:50%;
 }
-#chart-form input[type='radio']:checked:before {
+.chart-form input[type='radio']:checked:before {
     background:#FFF;
     box-shadow:-1px -1px 7px 3px #FF7A7A inset;
 }
 
-#chart-form input{
+.chart-form input{
   margin: 30px 1px -2px 4px;
 }
 
@@ -333,7 +340,7 @@ select{
   margin: 0;
 }
 
-#chart-form button, .add-review button{
+.chart-form button, .add-review button{
   background-color: #FF7A7A;
   color: white;
   border-style: none;
@@ -346,25 +353,25 @@ select{
   font-family: 'Ubuntu', sans-serif;
 }
 
-#chart-form button:hover, .add-review button:hover{
+.chart-form button:hover, .add-review button:hover{
   box-shadow: 0 1px 1px #333;
   transform: scale(1.1);
 }
 
-#image {
+.image {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#image-logo{
+.image-logo{
   position: absolute;
   top: 75px;
   width: 40px;
   height: 40px;
 }
 
-#black-background {
+.black-background {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -374,27 +381,28 @@ select{
   font-family: 'Ubuntu', sans-serif;
 }
 
-#facebook-image {
+.facebook-image {
+  margin-left: 12px;
   width: 24px;
   height: 24px;
 }
 
-#twitter-image {
+.twitter-image {
   width: 24px;
   height: 24px;
 }
 
-#instagram-image {
+.instagram-image {
   width: 24px;
   height: 24px;
 }
 
-#hangout {
+.hangout {
   margin-right: 25px;
   border-radius: 4px;
 }
 
-#about-us {
+.about-us {
   border-radius: 4px;
 }
 
@@ -418,7 +426,7 @@ select{
   text-decoration: none;
 }
 
-#home {
+.home {
   border-radius: 4px;
 }
 
@@ -426,13 +434,13 @@ nav a:hover {
   color: #FF7A7A;
 }
 
-#chart-div a{
+.chart-div a{
   color: #FF7A7A;
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
 }
 
-#team-bios {
+.team-bios {
   display: flex;
   flex-direction: row;
   justify-content: space-between;

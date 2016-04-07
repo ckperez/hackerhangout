@@ -11,29 +11,29 @@
     <header>
       <nav>
         <div class="social">
-          <img src="img/fb_icon_325x325.png" id="facebook-image">
-          <img src="img/Twitter-logo2.png" id="twitter-image">
-          <img src="img/instagram.png" id="instagram-image">
+          <a href="https://www.facebook.com/"><img src="img/fb_icon_325x325.png" id="facebook-image" class="facebook-image"></a>
+          <a href="https://www.instagram.com/"><img src="img/Twitter-logo2.png" id="twitter-image" class="twitter-image"></a>
+          <a href="https://twitter.com/"><img src="img/instagram.png" id="instagram-image" class="instagram-image"></a>
         </div>
         <ul class="nav-options">
-          <li id="home"><a href="index.html">Home</a></li>
-          <li id="about-us"><a href="about-us.html">About Us</a></li>
-          <li id="hangout"><a href="input.html">Add A New Hangout</a></li>
+          <li id="home" class="home"><a href="index.html">Home</a></li>
+          <li id="about-us" class="about-us"><a href="about-us.html">About Us</a></li>
+          <li id="hangout" class="hangout"><a href="input.html">Add A New Hangout</a></li>
         </ul>
       </nav>
     </header>
-    <section id="landing-page">
+    <section id="landing-page" class="landing-page">
       <video src="coffee-shop-ambience.mp4" loop autoplay muted></video>
-      <a href="#review-page"><button id="cta">Find Your Hacky Place</button></a>
+      <a href="#review-page"><button id="cta" class="cta">Find Your Hacky Place</button></a>
     </section>
     <section>
-      <div id="iframe-container" class="map">
+      <div id="iframe-container" class="map iframe-container">
         <div class="google-hider"><div class="click-to-interact">Click to Interact</div></div>
-        <iframe id="iframe-map" class="hacker-map" src="https://www.google.com/maps/d/embed?mid=zvGs80ZAIlBA.kKv4tXm1uXxA" width="100%" height="480"></iframe>
+        <iframe id="iframe-map" class="hacker-map iframe-map" src="https://www.google.com/maps/d/embed?mid=zvGs80ZAIlBA.kKv4tXm1uXxA" width="100%" height="480"></iframe>
       </div>
     </section>
-    <section id="review-page">
-      <div id='chart-div'>
+    <section id="review-page" class="review-page">
+      <div id="chart-div" class="chart-div">
         <div class="chart-placeholder">
           <ol>
             <li>Pick 2 Hacker Hangouts from the menus on the right.</li>
@@ -42,24 +42,18 @@
             <li>Click submit and check out your results right here!</li>
           </ol>
         </div>
-        <canvas id="canvas" width="400" height="400">
+        <canvas id="canvas" class="canvas" width="400" height="400">
         </canvas>
       </div>
-        <form id="chart-form">
+        <form id="chart-form" class="chart-form">
           <fieldset>
           <label name="hangouts">Hacker Hangout 1</label>
-          <select id="hangouts-dropdown-1" name="hangouts" required>
+          <select id="hangouts-dropdown-1" class="hangouts-dropdown-1" name="hangouts" required>
             <option value="" selected disabled hidden>Choose a Hacker Hangout</option>
-            <!-- <option value="name1">Name1</option>
-            <option value="name1">Name1</option>
-            <option value="name1">Name1</option> -->
           </select>
           <label name="hangouts2">Hacker Hangout 2</label>
-          <select id="hangouts-dropdown-2" name="hangouts2" required>
+          <select id="hangouts-dropdown-2" class="hangouts-dropdown-2" name="hangouts2" required>
             <option value="" selected disabled hidden>Choose a Hacker Hangout</option>
-            <!-- <option value="name1">Name1</option>
-            <option value="name1">Name1</option>
-            <option value="name1">Name1</option> -->
           </select>
           <br />
           <div class="hack-pref-label"><label name="positivePreference">Today I can't really hack without: </label></div>
@@ -103,14 +97,14 @@
             <button type="submit" value="submit">Submit</button>
             </fieldset>
         </form>
-        <p id="winner"></p>
+        <p id="winner" class="winner"></p>
 
      </section>
      <footer class='footer'>
-       <div id="image">
-         <img src="img/HackerHangoutLogo.png" id="image-logo">
+       <div id="image" class="image">
+         <img src="img/HackerHangoutLogo.png" id="image-logo" class="image-logo">
        </div>
-       <div id="black-background">
+       <div id="black-background" class="black-background">
        Hacker Hangout &copy; 2016 - All Rights Reserved
       </div>
      </footer>
